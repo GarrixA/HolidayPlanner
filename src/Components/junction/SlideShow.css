@@ -1,0 +1,357 @@
+.slide img{
+    width: 100%;
+    height: 100vh;
+}
+
+.slide .overlay{
+    width: 100%;
+    height: 130vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.336)
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.buttons .priv-button{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    width: 2%;
+    align-items: center;
+    border: 1px solid #c29d59;
+    background-color: #c29d59;
+    border-radius: 2px;
+}
+
+.buttons .next-button{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2%;
+    align-items: center;
+    border: 1px solid #c29d59;
+    background-color: #c29d59;
+    border-radius: 2px;
+}
+
+.slide h1{
+    position: absolute;
+    top: 34%;
+    left: 25%;
+    font-size: 5rem;
+    color: #fff;
+}
+.slide h3{
+    position: absolute;
+    top: 45%;
+    left: 32%;
+    font-size: 4rem;
+    background-color: #c29d59;
+    padding: 12px;
+    color: #fff;
+}
+.slide p{
+    position: absolute;
+    top: 58%;
+    left: 30%;
+    font-size: 1.5rem;
+    color: #fff;
+    width: 35%;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1200px){
+    .slideshow{
+        width: 1200px;
+    }
+    .slide .overlay{
+        width: 1200px;
+    }
+    .slide p{
+        width: 42%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}
+@media only screen and (max-width: 925px){
+    .slideshow{
+        width: 925px;
+    }
+    .slide .overlay{
+        width: 925px;
+    }
+    .slide p{
+        width: 65%;
+        left: 22%;
+        top: 62%;
+    }
+    .slide h1{
+        font-size: 4.7rem;
+        left: 18%;
+    }
+    .slide h3{
+        font-size: 4.7rem;
+        left: 23%;
+        padding: 0px;
+        top: 47%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}
+@media only screen and (max-width: 800px){
+    .slideshow{
+        width: 800px;
+    }
+    .slide .overlay{
+        width: 800px;
+    }
+    .slide p{
+        width: 65%;
+        left: 20%;
+        top: 62%;
+        font-size: 1.2rem;
+    }
+    .slide h1{
+        font-size: 4.3rem;
+        left: 12%;
+    }
+    .slide h3{
+        font-size: 4.1rem;
+        left: 21%;
+        padding: 0px;
+        top: 47%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .slideshow{
+        width: 600px;
+    }
+    .slide .overlay{
+        width: 600px;
+    }
+    .slide p{
+        width: 65%;
+        left: 20%;
+        top: 56%;
+        font-size: 1.2rem;
+    }
+    .slide h1{
+        font-size: 3.4rem;
+        left: 10%;
+    }
+    .slide h3{
+        font-size: 3rem;
+        left: 22%;
+        padding: 0px;
+        top: 45%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}
+@media only screen and (max-width: 425px){
+    .slideshow{
+        max-width: 425px;
+    }
+    .slide{
+        flex-wrap: wrap;
+    }
+    .slide .overlay{
+        max-width: 425px;
+    }
+    .slide p{
+        max-width: 70%;
+        left: 15%;
+        top: 43%;
+        font-size: 1.5rem;
+    }
+    .slide h1{
+        font-size: 2.5rem;
+        left: 8%;
+        top: 28%;
+    }
+    .slide h3{
+        font-size: 2rem;
+        left: 22%;
+        padding: 0px;
+        top: 36%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}
+@media only screen and (max-width: 360px){
+    .slideshow{
+        width: 360px;
+    }
+    .slide{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .slide .overlay{
+        width: 360px;
+    }
+    .slide p{
+        width: 70%;
+        left: 15%;
+        top: 43%;
+        font-size: 1.3rem;
+    }
+    .slide h1{
+        font-size: 2.2rem;
+        left: 7%;
+        top: 28%;
+    }
+    .slide h3{
+        font-size: 2rem;
+        left: 18%;
+        padding: 0px;
+        top: 36%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}
+@media only screen and (max-width: 375px){
+    .slideshow{
+        width: 375px;
+    }
+    .slide{
+        width: 100%;
+    }
+    .slide .overlay{
+        width: 375px;
+    }
+    .slide p{
+        width: 70%;
+        left: 15%;
+        top: 47%;
+        font-size: 1.1rem;
+    }
+    .slide h1{
+        font-size: 2.2rem;
+        left: 7%;
+        top: 28%;
+    }
+    .slide h3{
+        font-size: 2rem;
+        left: 18%;
+        padding: 0px;
+        top: 36%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}
+
+@media only screen and (max-width: 390px){
+    .slideshow{
+        width: 390px;
+    }
+    .slide{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .slide .overlay{
+        width: 390px;
+    }
+    .slide p{
+        width: 70%;
+        left: 15%;
+        top: 43%;
+        font-size: 1.3rem;
+    }
+    .slide h1{
+        font-size: 2.2rem;
+        left: 7%;
+        top: 28%;
+    }
+    .slide h3{
+        font-size: 2rem;
+        left: 18%;
+        padding: 0px;
+        top: 36%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    .slideshow{
+        max-width: 414px;
+    }
+    .slide{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .slide .overlay{
+        width: 414px;
+    }
+    .slide p{
+        width: 70%;
+        left: 15%;
+        top: 43%;
+        font-size: 1.3rem;
+    }
+    .slide h1{
+        font-size: 2.2rem;
+        left: 7%;
+        top: 28%;
+        height: 50px;
+    }
+    .slide h3{
+        font-size: 2rem;
+        left: 18%;
+        padding: 0px;
+        top: 36%;
+    }
+    .buttons .next-button{
+        width: 5%;
+    }
+    .buttons .priv-button{
+        width: 5%;
+    }
+}

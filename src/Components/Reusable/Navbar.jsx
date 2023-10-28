@@ -7,8 +7,19 @@ import {GrInstagram} from 'react-icons/gr';
 import {BsTwitter} from 'react-icons/bs';
 import {TbMenuDeep} from 'react-icons/tb';
 import image1 from '../../images/logo.png';
+import image2 from '../../images/10002.png';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import image3 from '../../images/plann.png'
 
-function Navbar() {
+function Navbar( ) {
+
+    const [openModal, setOpenModal] = useState(false);
+
+    const toggleModal = () =>{
+        setOpenModal(!openModal);
+    }
+
     return (
         <div className='navbar-container'>
             <div className="black-nav">
@@ -35,10 +46,43 @@ function Navbar() {
                 <div className="reserve">
                     <button>Reseve</button>
                     <FaSearch className='search'/>
-                    <TbMenuDeep className='menu'/>
+                    <TbMenuDeep className='menu' onClick={toggleModal}/>
+
+                {openModal && (
+                    
+                    <div className="overlay">
+                        
+                    <div className="modal-content">
+                    <img src={image3} alt="img" className='image'/>
+                        <div className="top-menu">
+                            <img src={image2} alt="img" />
+                            <button className='closeModal' onClick={toggleModal}>
+                                X
+                            </button>
+                        </div>
+
+                        <div className="bottom-menu">
+                            <div className="menu-links">
+                                <span><Link>Home</Link></span>
+                                <span><Link>About</Link></span>
+                                <span><Link>Contact us</Link></span>
+                                <span><Link>Amazing tours</Link></span>
+                                <span><Link>Dashboard</Link></span>
+                            </div>
+                            <div className="menu-socials">
+                                <span><FaFacebookF/></span>
+                                <span ><GrInstagram/></span>
+                                <span><BsTwitter/></span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                )}
+            </div>
                 </div>
             </div>
-        </div>
+        
     )
 }
 
