@@ -1,0 +1,58 @@
+.main-about{
+    height: 100vh;
+    background-color: #fff;
+}
+
+.main-about > .about-top{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 10vh;
+    position: relative;
+    bottom: 40px;
+    left: 20%;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 1px rgba(49, 49, 49, .2);
+    border-left: 4px solid #c29d59;
+    border-right: 4px solid #c29d59;
+}
+
+.about-top span{
+    width: 13rem;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #0000007c;
+}
+
+.about-go{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.about-arrow{
+    margin-right: 5px;
+}
+.about-icon{
+    color: #c29d59;
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+.about-top button{
+    width: 9rem;
+    height: 3rem;
+    border: 1px #c29d59;
+    background-color: #c29d59;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}

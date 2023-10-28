@@ -3,6 +3,7 @@ import SlideShow from '../junction/SlideShow';
 import image10 from '../../images/banner-slide-1.jpg';
 import image11 from '../../images/banner-slide-2.jpg';
 import image12 from '../../images/banner-slide-3.jpg';
+import About from './About';
 
 function Home() {
     const slides = [
@@ -26,9 +27,14 @@ function Home() {
         },
       ];
     return (
-        <div className="App">
-      <SlideShow slides={slides} />
+        <>
+        <div className="container">
+            <div className="main">
+                <SlideShow slides={slides} />
+            </div>
+            <About/>
         </div>
+        </>
     )
 }
 

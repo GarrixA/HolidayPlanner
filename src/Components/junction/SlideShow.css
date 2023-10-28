@@ -1,16 +1,19 @@
+.slideshow{
+    background-color: #fff;
+}
 .slide img{
     width: 100%;
-    height: 100vh;
+    height: 110vh;
 }
 
 .slide .overlay{
     width: 100%;
-    height: 130vh;
+    height: 110vh;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    position: fixed;
+    position: absolute;
     background-color: rgba(0, 0, 0, 0.336)
 }
 
