@@ -63,8 +63,8 @@ function Navbar( ) {
 
                         <div className="bottom-menu">
                             <div className="menu-links">
-                                <span><Link>Home</Link></span>
-                                <span><Link>About</Link></span>
+                                <span><Link to={'./'} onClick={toggleModal}>Home</Link></span>
+                                <span><Link to={'About'} onClick={toggleModal}>About</Link></span>
                                 <span><Link>Contact us</Link></span>
                                 <span><Link>Amazing tours</Link></span>
                                 <span><Link>Dashboard</Link></span>
