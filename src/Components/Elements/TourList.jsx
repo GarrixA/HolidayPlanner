@@ -46,7 +46,7 @@ function TourList() {
                                         <div className='tour-book'>
                                             <h3>{dura.price}</h3>
                                             <button><Link 
-                                            to={'../OnePage'}>{dura.book}</Link></button>
+                                            to={'/SingleTour'}>{dura.book}</Link></button>
                                         </div>
                                     </div>
                                     

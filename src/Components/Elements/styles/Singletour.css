@@ -1,0 +1,293 @@
+.main{
+    /* height: 250vh; */
+    background-color: #fff;
+}
+
+ .top-part{
+    width: 100%;
+    height: 70vh;
+    background-image: url(../../../images/tour-box-image2.jpg);
+    background-size: cover;
+    background-position: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.top-wrap > h1{
+    font-size: 1.7rem;
+    margin-top: 6rem;
+    margin-left: 2.2rem;
+    color: black;
+}
+
+.inform{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 8rem;
+}
+
+.inform .middles{
+    border-top: 1px solid #0000006d;
+    border-bottom: 1px solid #0000006d;
+    width: 100%;
+    padding: .50rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: black;
+    height: 2rem;
+}
+
+.inform .sides{
+    border: 1px solid #0000006d; 
+    /* width: 16rem; */
+    padding: .50rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: black;
+    width: 100%;
+    height: 2rem;
+}
+
+.page-details{
+    width: 50%;
+    height: 130vh;
+    margin-left: 8rem;
+    margin-top: 3rem;
+    box-shadow: 1px 1px 30px 2px rgba(0,0,0,0.089);
+}
+
+.rect{
+    width: 55px;
+    height: 50px;
+    background-color: black;
+    border-bottom-left-radius: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rect > h2{
+    color: #fff;
+    font-size: .98rem;
+}
+.rect > p{
+    color: #fff;
+}
+
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: #c29d59;
+    border-radius: 50%;
+    margin-top: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.circle > h1{
+    font-size: 1.2rem;
+}
+
+.circle hr{
+    height: 0px;
+    width: 5rem;
+}
+
+.top-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.shades{
+    display: flex;
+}
+
+
+
+.profiles{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 100px;
+    background-color: #c29d59;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 2.2rem;
+}
+
+.profiles > p{
+    color: black;
+    font-size: 1.2rem;
+}
+
+.sub-prof{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-s{
+    margin-left: 2.2rem;
+    margin-top: 1.7rem;
+    width: 91%;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.video{
+    width: 90%;
+    height: 30vh;
+    background-color: #fff;
+    margin-left: 2.2rem;
+    margin-top: 1.7rem;
+}
+
+.left{
+    width: 50%;
+}
+.rights{
+     width: 30%;
+    padding-top: 2rem;
+    position: relative;
+    bottom: 80px;
+    box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.089);
+    background-color: #fff;
+}
+
+.rights h1{
+    margin-left: 2.2rem;
+    padding: .49rem;
+}
+
+.holder{
+    display: flex;
+    gap: 5rem;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: .90rem;
+    width: 100%;
+    margin-top: 2rem;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.inputs input{
+    height: 2rem;
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 1.4rem;
+}
+
+.inputs .box textarea{
+    width: 100%;
+}
+
+.box{
+    width: 100%;
+    height: 3rem;
+}
+label{
+    font-size: 1.3rem;
+}
+
+.booknow{
+    background-color: #c29d59;
+    border: 1px solid #c29d59;
+    width: 12rem;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+ /* responsive */
+
+ @media (max-width: 414px){
+    .main{
+        max-width: 414px;
+        padding-bottom: 12rem;
+    }
+    .top-part {
+        width: 100%;
+    }
+    .left {
+        width: 100%;
+    }
+    .inform {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin-left: 0.5rem;
+    }
+    .holder {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+    .page-details {
+        width: 90%;
+        height: 130vh;
+        margin-left: 1.3rem;
+        margin-top: 3rem;
+        box-shadow: 1px 1px 30px 2px rgba(0,0,0,0.089);
+    }
+    .circle {
+        width: 80px;
+        height: 80px;
+        background-color: #c29d59;
+        border-radius: 50%;
+        margin-top: .4rem;
+        right: 210px;
+    }
+    .circle > h1{
+        font-size: .94rem;
+    }
+    .circle > h5{
+        font-size: .64rem;
+    }
+    .profiles {
+        margin-top: 1rem;
+        margin-left: 1.2rem;
+    }
+    .text-s {
+        margin-left: 1.2rem;
+        font-size: 1.4rem;
+    }
+    .rights {
+        width: 90%;
+        position: relative;
+        bottom: -150px;
+        box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.089);
+        background-color: #fff;
+        left: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputs input {
+        height: 2rem;
+        width: 80%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        padding: 8px 8px;
+        font-size: 1.4rem;
+        margin: 12px 0 0 0;
+    }
+ }

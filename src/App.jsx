@@ -8,6 +8,7 @@ import AmezingTours from './Components/Elements/AmezingTours';
 import About from './Components/Elements/About';
 import Error from './Components/Elements/Error';
 import Home from './Components/Elements/Home';
+import SingleTour from './Components/Elements/SingleTour';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path='About' element={<About/>}/>
             <Route path='ContactUs' element={<ContactUs/>}/>
             <Route path='TourList' element={<TourList/>}/>
+            <Route path='SingleTour' element={<SingleTour/>}/>
             <Route path='AmazingTours' element={<AmezingTours/>}/>
             <Route path='*' element={<Error/>}/>
           </Route>
