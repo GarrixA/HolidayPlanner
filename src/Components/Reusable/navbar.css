@@ -150,13 +150,13 @@
     padding: 8px;
     border: 2px solid #000;
     border-radius: 50%;
-    font-size: 1.7rem;
+    font-size: 2rem;
     cursor: pointer;
 }
 
 .reserve > .menu{
     color: #fff;
-    font-size: 1.9rem;
+    font-size: 2.4rem;
     padding: 8px;
     background-color: #c29d59;
     border-radius: 50%;
@@ -476,9 +476,10 @@
     }
 }
 
-@media only screen and (max-width: 325px){
+
+@media only screen and (max-width: 414px){
     .navbar-container{
-        width: 325px;
+        width: 414px;
     }
    .black-nav{
     display: none;
@@ -512,9 +513,44 @@
     }
 }
 
-@media only screen and (max-width: 414px){
+@media (max-width: 375px){
     .navbar-container{
-        width: 414px;
+        width: 375px;
+    }
+   .black-nav{
+    display: none;
+   }
+    .white-nav{
+        width: 100%;
+        position: fixed;
+        top: 46px;
+        margin: 0;
+        top: 0;
+        height: 11vh;
+    }
+
+    .white-nav > .logos img{
+        height: 40px;
+        width: 80%;
+        margin-left: 8%;
+    }
+    .reserve{
+        margin: 3%;
+    }
+    .reserve > button{
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+    .reserve > .search{
+        font-size: 1.2rem;
+    }
+    .reserve > .menu{
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width: 325px){
+    .navbar-container{
+        width: 325px;
     }
    .black-nav{
     display: none;

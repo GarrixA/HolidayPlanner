@@ -4,6 +4,7 @@ import image10 from '../../images/banner-slide-1.jpg';
 import image11 from '../../images/banner-slide-2.jpg';
 import image12 from '../../images/banner-slide-3.jpg';
 import About from './About';
+import ContactUs from './ContactUs';
 
 function Home() {
     const slides = [
@@ -33,6 +34,7 @@ function Home() {
                 <SlideShow slides={slides} />
             </div>
             <About/>
+            <ContactUs/>
         </div>
         </>
     )
