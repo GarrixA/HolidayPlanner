@@ -53,7 +53,7 @@ function Navbar( ) {
                     <div className="overlay">
                         
                     <div className="modal-content">
-                    <img src={image3} alt="img" className='image'/>
+                    <img src={image3} alt="img" className='images'/>
                         <div className="top-menu">
                             <img src={image2} alt="img" />
                             <button className='closeModal' onClick={toggleModal}>
@@ -63,10 +63,11 @@ function Navbar( ) {
 
                         <div className="bottom-menu">
                             <div className="menu-links">
-                                <span><Link to={'./'} onClick={toggleModal}>Home</Link></span>
+                                <span><Link to={'/'} onClick={toggleModal}>Home</Link></span>
                                 <span><Link to={'About'} onClick={toggleModal}>About</Link></span>
-                                <span><Link>Contact us</Link></span>
-                                <span><Link>Amazing tours</Link></span>
+                                <span><Link to={'ContactUs'} onClick={toggleModal}>Contact us</Link></span>
+                                <span><Link to={'TourList'} onClick={toggleModal}>Tour list</Link></span>
+                                <span><Link to={'AmazingTour'} onClick={toggleModal}>Amazing tours</Link></span>
                                 <span><Link>Dashboard</Link></span>
                             </div>
                             <div className="menu-socials">

@@ -1,6 +1,7 @@
 .main-about{
     background-color: #fff;
-    padding-bottom: 4rem;
+    padding-bottom: 8rem;
+    /* padding-top: 4rem; */
 }
 
 .main-about > .about-top{
@@ -149,6 +150,7 @@
         height: 45vh;
         bottom: 100px;
         justify-content: space-evenly;
+        /* padding-top: 0rem; */
     }
 }
 

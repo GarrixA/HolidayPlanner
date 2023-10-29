@@ -1,3 +1,345 @@
+/* tourlist whole container */
+.tourlist-container{
+    display: flex;
+    width: 45%;
+    margin-left: 12%;
+    gap: 40px;
+}
+.main-tourlist{
+    background-color: #fff;
+}
+
+/* the tourlist image  */
 .tourlist-image{
     width: 100%;
+    height: 70vh;
+    background-image: url(../../../images/tourlist.jpg);
+    background-size: cover;
+    background-position: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* tourlist description */
+.tourlist-image h1{
+    color: #fff;
+    font-size: 5rem;
+}
+
+/* tourlist navigation */
+.showlist{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12%;
+}
+.showlist span{
+    width: 36%;
+    font-size: 1.4rem;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.left-list{
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+
+}
+.right-list{
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+
+}
+.middle-list{
+    border: 1px solid #000;
+}
+
+.tours{
+    display: flex;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+}
+
+/* right side form */
+
+/* find your tour and related the line */
+.find{
+    width: 25%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+    right: 16%;
+    bottom: 120px;
+    padding-bottom: 2rem;
+    box-shadow: 1px 1px 8px 1px rgba(3, 3, 3, 0.2);
+}
+
+.text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    margin-left: 43px;
+    margin-top: 12px;
+}
+.text .lin{
+    width: 5px;
+    height: 40px;
+    background-color: #c29d59;
+}
+
+/* inputs */
+.inputs input{
+    width: 75%;
+    height: 4vh;
+    border-radius: 4px;
+    border: 1px solid #000;
+    padding: 4px;
+    margin-top: 12px;
+    margin-left: 43px;
+    font-size: 1.1rem;
+}
+
+/* p looks like inputs that holds icons */
+.inputs p{
+    width: 75%;
+    height: 4vh;
+    margin-top: 12px;
+    margin-left: 43px;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    font-size: 1.1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid #000;
+}
+
+.inputs h1{
+    margin-left: 43px;
+    color: #000000;
+    font-size: 1.3rem;
+    margin-top: 12px;
+}
+
+
+/* min-mum and max-mum that has a wrapper of "mins" */
+.mins{
+    display: flex;
+    flex-direction: row;
+    margin-left: 43px;
+}
+
+.mins h1{
+    color: #000000;
+    font-size: 1.3rem;
+    margin-top: 12px;
+}
+
+.mins input{
+    width: 65%;
+    height: 4vh;
+    border: 1px;
+    border-radius: 4px;
+    padding: 4px;
+    margin-top: 12px;
+    font-size: 1.1rem;
+    border: 1px solid #000;
+}
+
+/* the checkboxes */
+.box label{
+    font-size: 1.3rem;
+}
+
+.box{
+    margin-left: 38px;
+    display: flex;
+    margin-top: 12px;
+    gap: 15px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.check{
+    width: 50px;
+    height: 5vh;
+    border: 1px;
+}
+
+/* button */
+.find button{
+    width: 80%;
+    border: 1px;
+    border-radius: 4px;
+    background-color: #c29d59;
+    margin-left: 43px;
+    margin-top: 12px;
+    padding: 18px 0px 10px 0px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+/* the tourlist cards and form */
+
+.tour-cards{
+    position: relative;
+    top: 2rem;
+    box-shadow: 1px 1px 5px 5px rgba(49, 49, 49, .2);
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+.tour-image img{
+    width: 100%;
+    height: 30vh;
+}
+
+.tour-italy{
+    background-color: #c29d59;
+    width: 10%;
+    text-align: center;
+    padding: 8px;
+    font-size: 1.3rem;
+    position: relative;
+    bottom: 20px;
+    left: 5%;
+}
+
+.holiday{
+    font-size: 1.2rem;
+    margin: 0% 6%;
+}
+
+.holiday-description{
+    font-size: .98rem;
+    margin: 0% 6%;
+    padding-bottom: 12px;
+}
+
+.tour-duration{
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tour-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #c29d59;
+}
+
+.tour-book{
+    padding: 17px 0px 0px 0px;    
+    border-top: 1px solid #c29d59;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.tour-book h3{
+    font-size: 1.8rem;
+    margin-left: 4.5%;
+}
+.tour-book button{
+    background-color: #c29d59;
+    border: 1px;
+    border-radius: 2px;
+    padding: 12px 14px;
+    margin-right: 7%;
+}
+.tour-book button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.tour-partone{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0px 0px 0px 17px;
+    width: 50%;
+    padding: 12px 0px;
+}
+
+.tour-partone h3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+.tour-partone p{
+    margin-left: 13%;
+}
+
+/* responsive */
+
+@media (max-width: 414px){
+    .main-tourlist {
+        max-width: 414px;
+        display: flex;
+        flex-direction: column;
+    }
+    .tourlist-image {
+        width: 100%;
+    }
+    .showlist {
+        width: 95%;
+        margin-left: 2%;
+    }
+    .showlist span {
+        width: 40%;
+        font-size: 1.2rem;
+        height: 5vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .tours {
+        display: flex;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 4rem;
+    }
+    .tourlist-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin-left: 12%;
+        gap: 40px;
+    }
+    .find {
+        width: 82%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        position: relative;
+        right: -11%;
+        bottom: -70px;
+        padding-bottom: 2rem;
+        box-shadow: 1px 1px 8px 1px rgba(3, 3, 3, 0.2);
+    }
+
 }

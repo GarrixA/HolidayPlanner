@@ -1,10 +1,109 @@
-import React from 'react'
+import React from 'react';
+import './styles/tourlist.css';
+import {BiSolidDownArrow} from 'react-icons/bi';
+import {BsFillClockFill} from 'react-icons/bs';
+import { MdGroup } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import tour from '../Arrays/Tour';
 
 function TourList() {
     return (
         <div className='main-tourlist'>
             <div className="tourlist-image">
                 <h1>Tour List</h1>
+            </div>
+            <div className="showlist">
+                <span className='left-list'>Sort by:</span>
+                <span className='middle-list'>Realese date <BiSolidDownArrow/></span>
+                <span className='right-list'>Descending <BiSolidDownArrow/></span>
+            </div>
+            <div className="tours">
+                <div className='tourlist-container'>
+                {
+                    tour.map(list =>(
+                        <div key={list.id} className='tourlist'>
+                            <div className="tour-cards">
+                                <div className='tour-image'>
+                                    <img src={list.image} alt="img" />
+                                </div>
+                                <h4 className='tour-italy'>{list.italy}</h4>
+                                <h2 className='holiday'>{list.holiday}</h2>
+                                <p className='holiday-description'>{list.description}</p>
+                            
+                                {list.duration.map(dura =>(
+                                    <div className='tour-duration'>
+                                        <div className='tour-wrapper'>
+                                            <div className="tour-partone">
+                                            <h3 ><BsFillClockFill />{dura.tittle}</h3>
+                                            <p>{dura.description}</p>
+                                            </div>
+                                            <div className="tour-partone">
+                                            <h3 ><MdGroup />{dura.group}</h3>
+                                            <p>{dura.gDiscription}</p>
+                                            </div>
+                                        </div>
+
+                                        <div className='tour-book'>
+                                            <h3>{dura.price}</h3>
+                                            <button><Link 
+                                            to={'../OnePage'}>{dura.book}</Link></button>
+                                        </div>
+                                    </div>
+                                    
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                    }
+                </div>
+
+                <div className="find">
+                    <div className="text">
+                        <div className="lin"></div>
+                        <h1>Find your tour</h1>
+                    </div>
+
+                    <div className="inputs">
+                        <input type="text"  placeholder='Search a tour'/>
+                        <input type="text" placeholder='where to?'/>
+                        <p className='side' >Month <BiSolidDownArrow/></p>
+                        <h1 >Duration</h1>
+                        <p className='side'>Any <BiSolidDownArrow/></p>
+                    </div>
+                    
+                    <div className="mins">
+                        <div className="min">
+                            <h1>Min Price</h1>
+                            <input type="number" placeholder='1'/>
+                        </div>
+                        <div className="max">
+                            <h1>Max Price</h1>
+                            <input type="number" placeholder='100'/>
+                        </div>
+                    </div>
+                    <div className="box">
+                        <input type="checkbox" className='check'/>
+                        <label >Cultural</label>
+                    </div>
+                    <div className="box" >
+                        <input type="checkbox" className='check'/>
+                        <label >Adventure</label>
+                    </div>
+                    <div className="box" >
+                        <input type="checkbox" className='check'/>
+                        <label >Historical</label>
+                    </div>
+                    <div className="box" >
+                        <input type="checkbox" className='check'/>
+                        <label >Seaside</label>
+                    </div>
+                    <div className="box" >
+                        <input type="checkbox" className='check'/>
+                        <label >Discovery</label>
+                    </div>
+
+                    <button >Find Now</button>
+                </div>
             </div>
         </div>
     )

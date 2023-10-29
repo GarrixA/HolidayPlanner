@@ -5,6 +5,7 @@ import image11 from '../../images/banner-slide-2.jpg';
 import image12 from '../../images/banner-slide-3.jpg';
 import About from './About';
 import ContactUs from './ContactUs';
+import TourList from './TourList';
 
 function Home() {
     const slides = [
@@ -35,6 +36,7 @@ function Home() {
             </div>
             <About/>
             <ContactUs/>
+            <TourList/>
         </div>
         </>
     )
