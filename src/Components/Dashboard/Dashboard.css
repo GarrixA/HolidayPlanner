@@ -13,7 +13,7 @@
     border-right: 2px solid #0000003d;
 }
 .right-dash{
-    background-color: #7ddad2;
+    background-color: #fdfdfd;
     width: 90%;
 }
 .top-body{
@@ -53,7 +53,7 @@
     margin: 18px;
     font-size: 1.3rem;
     cursor: pointer;
-    color: rgba(35, 73, 60, 0.747);
+    color: rgba(255, 255, 255, 0.747);
     cursor: pointer;
 }
 

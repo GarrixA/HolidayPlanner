@@ -35,8 +35,10 @@ function Tours() {
     }, []);
 
     return (
-        <>  
+        <> 
+            <Form/> 
             <div className="table-wrapper">
+                <h1>Tours</h1>
             <div className="table">
                 <ToastContainer/>
                 <table>
@@ -54,7 +56,7 @@ function Tours() {
                         {
                             tours.map((t, idx) =>{
                                 return <tr key={idx}>
-                                    <td><img src={t.BackdropImage} alt="img" /></td>
+                                    <td><img src={t.BackdropImage} alt="" /></td>
                                     <td>{t.destination}</td>
                                     <td>{t.Duration}</td>
                                     <td>{t.GroupSize}</td>
@@ -70,7 +72,7 @@ function Tours() {
                         }
                     </tbody>
                 </table>
-                <Form/>
+                
             </div>
             </div>
         

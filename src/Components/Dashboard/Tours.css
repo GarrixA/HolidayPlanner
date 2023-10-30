@@ -48,6 +48,17 @@ th{
     color: #fff;
 }
 
+.label-draft{
+    background-color: #777;
+}
+
+.label-live{
+    background-color: #42a942;
+}
+
+.label-rel{
+    background-color: #d9534f;
+}
 
 .actions{
     display: flex;
