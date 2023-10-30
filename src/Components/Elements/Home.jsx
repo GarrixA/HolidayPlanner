@@ -16,14 +16,14 @@ function Home() {
             image: image10,
         },
         {
-            title: 'Enjoy the travel with',
-            description: 'Holiday planners',
+            title: 'Get Ready to travel',
+            description: 'The World',
             comment: 'A jurney of a 100 miles starts with one single step, Important of the full demo content with one click and create a head-turning website for your travel',
             image: image11,
         },
         {
-            title: 'Enjoy the travel with',
-            description: 'Holiday planners',
+            title: 'Life Is Short and Also',
+            description: 'The world is Wide',
             comment: 'A jurney of a 100 miles starts with one single step, Important of the full demo content with one click and create a head-turning website for your travel',
             image: image12,
         },

@@ -11,6 +11,8 @@ import Home from './Components/Elements/Home';
 import SingleTour from './Components/Elements/SingleTour';
 import Dashbord from './Components/Dashboard/Dashbord';
 import Tours from './Components/Dashboard/Tours';
+import Login from './Components/Elements/Users/Login';
+import Signup from './Components/Elements/Users/Signup';
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
             <Route path='TourList' element={<TourList/>}/>
             <Route path='SingleTour' element={<SingleTour/>}/>
             <Route path='AmazingTours' element={<AmezingTours/>}/>
+            <Route path='Login' element={<Login/>}/>
+            <Route path='Signup' element={<Signup/>}/>
             <Route path='*' element={<Error/>}/>
           </Route>
 

@@ -1,5 +1,10 @@
 .table-wrapper{
     width: 100%;
+    margin-top: 2rem;
+}
+.table-wrapper h1{
+    margin-bottom: 2rem;
+    margin-left: 1rem;
 }
 
 .table{
@@ -18,12 +23,23 @@
 
 .table thead{
     color: #222;
+    width: 100%;
+    background-color: #22222254;
+}
+table{
+    width: 100%;
+    border-spacing: 0px;
+}
+
+tr{
+    width: 100%;
 }
 
 th{
-    text-align: start;
-    
+    text-align: start;  
+    /* background-color: red; */
 }
+
 
 .table th,
 .table td{
@@ -33,6 +49,7 @@ th{
 .table td{
     border-top: 0.5px solid #ddd;
     overflow: hidden;
+    /* border-collapse: collapse; */
     text-overflow: ellipsis;
 }
 
@@ -47,19 +64,6 @@ th{
     padding: 0.3rem;
     color: #fff;
 }
-
-.label-draft{
-    background-color: #777;
-}
-
-.label-live{
-    background-color: #42a942;
-}
-
-.label-rel{
-    background-color: #d9534f;
-}
-
 .actions{
     display: flex;
     gap: 14px;

@@ -15,7 +15,7 @@ function Dashbord() {
     return (
         <div className='dashboard'>
             <div className="left-dash">
-                <span className='back'><MdOutlineArrowBackIosNew/> Back</span>  
+                <span className='back'><MdOutlineArrowBackIosNew/><Link to={'/'}> Back </Link></span>  
                 <div className="dash-image">
                     <img src={image2} alt="img" />
                 </div>
@@ -23,10 +23,10 @@ function Dashbord() {
                     <h1>MAIN MENU</h1>
                 </div>
                 <div className="components">
-                    <h2 className='board-icons'><RxDashboard/> <Link to={''}>Dashboard</Link></h2>    
-                    <h2 className='board-icons'><FaPlaneDeparture/> <Link to={'./Tours'}>Tours</Link></h2>    
-                    <h2 className='board-icons'><FaCalendarCheck/> <Link>Bookings</Link></h2>    
-                    <h2 className='board-icons'><FaUsers/> <Link>Users</Link></h2>    
+                    <h2 className='board-icons'><RxDashboard className='icon1'/> <Link to={''}>Dashboard</Link></h2>    
+                    <h2 className='board-icons'><FaPlaneDeparture className='icon1'/> <Link to={'./Tours'}>Tours</Link></h2>    
+                    <h2 className='board-icons'><FaCalendarCheck className='icon1'/> <Link>Bookings</Link></h2>    
+                    <h2 className='board-icons'><FaUsers className='icon1'/> <Link>Users</Link></h2>    
                 </div> 
                 <div className="logout">
                     <h2 className='logout'><LuLogOut style={{color: '#c29d59'}}/> Log out</h2>
