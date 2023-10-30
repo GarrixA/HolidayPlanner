@@ -68,7 +68,7 @@ function Navbar( ) {
                                 <span><Link to={'ContactUs'} onClick={toggleModal}>Contact us</Link></span>
                                 <span><Link to={'TourList'} onClick={toggleModal}>Tour list</Link></span>
                                 <span><Link to={'AmazingTour'} onClick={toggleModal}>Amazing tours</Link></span>
-                                <span><Link>Dashboard</Link></span>
+                                <span><Link to={'/Dashboard'}>Dashboard</Link></span>
                             </div>
                             <div className="menu-socials">
                                 <span><FaFacebookF/></span>

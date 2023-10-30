@@ -9,6 +9,8 @@ import About from './Components/Elements/About';
 import Error from './Components/Elements/Error';
 import Home from './Components/Elements/Home';
 import SingleTour from './Components/Elements/SingleTour';
+import Dashbord from './Components/Dashboard/Dashbord';
+import Tours from './Components/Dashboard/Tours';
 
 function App() {
 
@@ -24,6 +26,10 @@ function App() {
             <Route path='SingleTour' element={<SingleTour/>}/>
             <Route path='AmazingTours' element={<AmezingTours/>}/>
             <Route path='*' element={<Error/>}/>
+          </Route>
+
+          <Route path='/Dashboard' element={<Dashbord/>}>
+            <Route path='Tours' element={<Tours/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
