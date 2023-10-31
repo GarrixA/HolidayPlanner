@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 function Tours() {
     const [tours, setTours] = useState([]);
@@ -56,15 +57,17 @@ function Tours() {
                         {
                             tours.map((t, idx) =>{
                                 return <tr key={idx}>
-                                    <td><img src={t.BackdropImage} alt="" /></td>
+                                    <td><img src={t.backdropImage} alt="img" 
+                                        className='backdrop'
+                                    /></td>
                                     <td>{t.destination}</td>
                                     <td>{t.Duration}</td>
                                     <td>{t.GroupSize}</td>
-                                    <td>{t.Price}</td>
+                                    <td style={{opacity: '.6'}}>$ {t.Price}</td>
                                     <td >
                                     <span className='actions'>
-                                        <BsFillTrashFill className='delete-btn' onClick={() => deleteRow(idx)}/>
-                                        <BsFillPencilFill onClick={() => editRow(idx)}/>
+                                        <BsFillTrashFill className='delete-btn' />
+                                        <Link to={`Edit/${t._id}`}><BsFillPencilFill /></Link>
                                     </span>
                                 </td>
                                 </tr>

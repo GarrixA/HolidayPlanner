@@ -41,14 +41,14 @@
     flex-wrap: wrap;
     width: 40%;
     gap: 16px;
-    background-color: #fff;
+    background-color: #ffffff;
     height: 40vh;
     box-shadow: 1px 1px 8px 1px rgba(3, 3, 3, 0.2);
     justify-content: space-evenly;
     padding: 50px;
     position: relative;
     bottom: -40px;
-    left: 10%;
+    left: 4%;
     border-radius: 8px;
 
 }

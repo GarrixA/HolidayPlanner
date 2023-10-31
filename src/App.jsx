@@ -13,6 +13,7 @@ import Dashbord from './Components/Dashboard/Dashbord';
 import Tours from './Components/Dashboard/Tours';
 import Login from './Components/Elements/Users/Login';
 import Signup from './Components/Elements/Users/Signup';
+import Edit from './Components/Dashboard/Functionalities/Edit';
 
 function App() {
 
@@ -32,8 +33,9 @@ function App() {
             <Route path='*' element={<Error/>}/>
           </Route>
 
-          <Route path='/Dashboard' element={<Dashbord/>}>
+          <Route path='Dashboard' element={<Dashbord/>}>
             <Route path='Tours' element={<Tours/>}/>
+            <Route path='Tours/Edit/:id' element={<Edit/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

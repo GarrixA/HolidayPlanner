@@ -58,7 +58,7 @@
 }
 .slide h3{
     position: absolute;
-    top: 47%;
+    top: 50%;
     left: 32%;
     font-size: 4rem;
     background-color: #c29d59;
@@ -67,7 +67,7 @@
 }
 .slide p{
     position: absolute;
-    top: 62%;
+    top: 68%;
     left: 27%;
     font-size: 1.5rem;
     color: #fff;
