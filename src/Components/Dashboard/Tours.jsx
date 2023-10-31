@@ -35,6 +35,25 @@ function Tours() {
         fetctTour();
     }, []);
 
+    // Delete
+    const handleDelete = (id) => {
+        if (window.confirm("Are you sure you want to delete?")) {
+          let token = localStorage.getItem("token")
+          axios({
+            url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/deleteAll?fieldName=_id&value=${id}`,
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${token}`
+            },
+          }).then((response) => {
+            toast.success("Item deleted successfully")
+            console.log(response, "Response")
+          }).catch((error) => {
+            toast.error(error.response.data.message)
+            console.log(error, "Error")
+          })
+        }
+      }
     return (
         <> 
             <Form/> 
@@ -66,7 +85,7 @@ function Tours() {
                                     <td style={{opacity: '.6'}}>$ {t.Price}</td>
                                     <td >
                                     <span className='actions'>
-                                        <BsFillTrashFill className='delete-btn' />
+                                        <BsFillTrashFill onClick={() => handleDelete(t._id)} className='delete-btn'/>
                                         <Link to={`Edit/${t._id}`}><BsFillPencilFill /></Link>
                                     </span>
                                 </td>
