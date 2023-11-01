@@ -56,11 +56,13 @@ function Tours() {
                         {
                             tours.map((t, idx) =>{
                                 return <tr key={idx}>
-                                    <td><img src={t.BackdropImage} alt="" /></td>
+                                    <td><img src={t.backdropImage} alt="" 
+                                        className='backdrop'
+                                    /></td>
                                     <td>{t.destination}</td>
                                     <td>{t.Duration}</td>
-                                    <td>{t.GroupSize}</td>
-                                    <td>{t.Price}</td>
+                                    <td>{t.GroupSize} Poeple</td>
+                                    <td style={{opacity: '.7'}}>$ {t.Price}</td>
                                     <td >
                                     <span className='actions'>
                                         <BsFillTrashFill className='delete-btn' onClick={() => deleteRow(idx)}/>

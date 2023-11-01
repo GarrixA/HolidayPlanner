@@ -79,3 +79,9 @@ th{
     color: #e10d05;
 }
 
+/* backdrop image */
+
+.backdrop{
+    width: 70px;
+    height: 60px;
+}
