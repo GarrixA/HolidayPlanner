@@ -36,24 +36,24 @@ function Users() {
     }, []);
 
     // Delete
-    // const handleDelete = (id) => {
-    //     if (window.confirm("Are you sure you want to delete?")) {
-    //       let token = localStorage.getItem("token")
-    //       axios({
-    //         url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/deleteAll?fieldName=_id&value=${id}`,
-    //         method: "DELETE",
-    //         headers: {
-    //           Authorization: `Bearer ${token}`
-    //         },
-    //       }).then((response) => {
-    //         toast.success("Item deleted successfully")
-    //         console.log(response, "Response")
-    //       }).catch((error) => {
-    //         toast.error(error.response.data.message)
-    //         console.log(error, "Error")
-    //       })
-    //     }
-    //   }
+    const handleDelete = (id) => {
+        if (window.confirm("Are you sure you want to delete?")) {
+          let token = localStorage.getItem("token")
+          axios({
+            url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/deleteAll?fieldName=_id&value=${id}`,
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${token}`
+            },
+          }).then((response) => {
+            toast.success("Item deleted successfully")
+            console.log(response, "Response")
+          }).catch((error) => {
+            toast.error(error.response.data.message)
+            console.log(error, "Error")
+          })
+        }
+      }
   return (
     <div className="table-wrapper">
                 <h1>Users</h1>
@@ -66,7 +66,9 @@ function Users() {
                             <th>User name</th>
                             <th>User Phone</th>
                             <th>User Location</th>
+                            <th>Role</th>
                             <th>Action</th>
+                            
                         </tr>
                     </thead>
                     <tbody>

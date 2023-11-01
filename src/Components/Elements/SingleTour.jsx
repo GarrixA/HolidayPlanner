@@ -45,11 +45,11 @@ function SingleTour() {
                   </div>
                 </div>
                 <div className="profiles">
-                    <p className='sub-prof'><BsFillClockFill color='white' size='1.7rem'/>2 days</p>
-                    <p className='sub-prof'><FaUserGroup color='white' size='1.7rem'/>6 people</p>
-                    <p className='sub-prof'><BsFillPersonPlusFill color='white' size='2rem'/>18</p>
-                    <p className='sub-prof'><MdLocationOn color='white' size='2rem'/>Greece</p>
-                    <p className='sub-prof' ><FaSun color='white' size='1.8rem'/>Discovery</p>
+                    <p className='sub-prof'><BsFillClockFill color='white' size='1.4rem'/>2 days</p>
+                    <p className='sub-prof'><FaUserGroup color='white' size='1.4rem'/>6 people</p>
+                    <p className='sub-prof'><BsFillPersonPlusFill color='white' size='1.7rem'/>18</p>
+                    <p className='sub-prof'><MdLocationOn color='white' size='1.7rem'/>Greece</p>
+                    <p className='sub-prof' ><FaSun color='white' size='1.5rem'/>Discovery</p>
                 </div>
                   <p className='text-s'>I should be incapable of drawing a single stroke at the present moment; 
                     and yet I feel that I never was a greater artist than now. 

@@ -28,7 +28,7 @@ function Chart() {
           },
           title: {
             display: true,
-            text: 'Chart.js Bar Chart',
+            text: 'Holiday planners',
           },
         },
       };

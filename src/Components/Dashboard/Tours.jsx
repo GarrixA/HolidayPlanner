@@ -76,23 +76,12 @@ function Tours() {
                         {
                             tours.map((t, idx) =>{
                                 return <tr key={idx}>
-<<<<<<< HEAD
-                                    <td><img src={t.backdropImage} alt="" 
-=======
-                                    <td><img src={t.backdropImage} alt="img" 
->>>>>>> 2296f8fb64726c41824b036a6777c1196a52e81b
-                                        className='backdrop'
-                                    /></td>
+                                    <td><img className='backdrop' src={t.backdropImage} alt=""/></td>
                                     <td>{t.destination}</td>
                                     <td>{t.Duration}</td>
-<<<<<<< HEAD
-                                    <td>{t.GroupSize} Poeple</td>
-                                    <td style={{opacity: '.7'}}>$ {t.Price}</td>
-=======
                                     <td>{t.GroupSize}</td>
-                                    <td style={{opacity: '.6'}}>$ {t.Price}</td>
->>>>>>> 2296f8fb64726c41824b036a6777c1196a52e81b
-                                    <td >
+                                    <td>{t.Price}</td>
+                                    <td>
                                     <span className='actions'>
                                         <BsFillTrashFill onClick={() => handleDelete(t._id)} className='delete-btn'/>
                                         <Link to={`Edit/${t._id}`}><BsFillPencilFill /></Link>

@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles/Tourlist.css';
 import {BiSolidDownArrow} from 'react-icons/bi';
 import {BsFillClockFill} from 'react-icons/bs';
 import { MdGroup } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import tour from '../Arrays/Tour';
+import { useState } from 'react';
+import axios from 'axios';
+
 
 function TourList() {
+
+    const [tours, setTours] = useState([]);
+    
+    console.log(tours)
+    useEffect(()=>{
+        const fetctTour = ()=>{
+            axios({
+                method: 'GET',
+                url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/",
+                headers: {
+                    "Content-Type": "Application/json",
+                }
+            })
+            .then((response) =>{
+                console.log(response);
+                setTours(response.data)
+                toast.success("well done")
+            })
+            .catch((error) =>{
+                console.log(error);
+                toast.error(error.response.data.message);
+                toast.error('Fetch failed')
+              })
+        }
+        fetctTour();
+    }, []);
+
     return (
         <div className='main-tourlist'>
             <div className="tourlist-image">
@@ -19,42 +49,42 @@ function TourList() {
             </div>
             <div className="tours">
                 <div className='tourlist-container'>
-                {
-                    tour.map(list =>(
-                        <div key={list.id} className='tourlist'>
-                            <div className="tour-cards">
-                                <div className='tour-image'>
-                                    <img src={list.image} alt="img" />
-                                </div>
-                                <h4 className='tour-italy'>{list.italy}</h4>
-                                <h2 className='holiday'>{list.holiday}</h2>
-                                <p className='holiday-description'>{list.description}</p>
-                            
-                                {list.duration.map(dura =>(
-                                    <div className='tour-duration'>
-                                        <div className='tour-wrapper'>
-                                            <div className="tour-partone">
-                                            <h3 ><BsFillClockFill />{dura.tittle}</h3>
-                                            <p>{dura.description}</p>
-                                            </div>
-                                            <div className="tour-partone">
-                                            <h3 ><MdGroup />{dura.group}</h3>
-                                            <p>{dura.gDiscription}</p>
-                                            </div>
+                
+                        <div className='tourlist'>
+                        {
+                                    tours.map((item, idx) =>{
+                                        return <div className="tour-cards" key={idx}>
+                                
+                                        <div className='tour-image'>
+                                            <img src={item.backdropImage} alt="img" />
                                         </div>
-
-                                        <div className='tour-book'>
-                                            <h3>{dura.price}</h3>
-                                            <button><Link 
-                                            to={'/SingleTour'}>{dura.book}</Link></button>
-                                        </div>
+                                        <h4 className='tour-italy'>{item.Title}</h4>
+                                        <h2 className='holiday'>Holiday Planners is a World Leading Online Tour Booking Platform</h2>
+                                        <p className='holiday-description'>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>
+                                            <div className='tour-duration'>
+                                                <div className='tour-wrapper'>
+                                                    <div className="tour-partone">
+                                                    <h3 ><BsFillClockFill />{item.Duration}</h3>
+                                                    <p>{item.Seats}</p>
+                                                    </div>
+                                                    <div className="tour-partone">
+                                                    <h3 ><MdGroup />{item.GroupSize}</h3>
+                                                    <p></p>
+                                                    </div>
+                                                </div>
+        
+                                                <div className='tour-book'>
+                                                    <h3>{item.Price}</h3>
+                                                    <button><Link 
+                                                    to={'/SingleTour'}>Book Now</Link></button>
+                                                </div>
+                                            </div>
                                     </div>
-                                    
-                                ))}
-                            </div>
+                                    })
+                                }
+                            
                         </div>
-                    ))
-                    }
+                   
                 </div>
 
                 <div className="find">
