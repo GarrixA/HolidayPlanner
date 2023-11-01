@@ -1,5 +1,5 @@
 import React from 'react';
-import './signup.css';
+import './Signup.css';
 import image1 from '../../../images/login.png';
 import { useState } from 'react';
 import axios from 'axios';

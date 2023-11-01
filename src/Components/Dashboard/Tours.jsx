@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 function Tours() {
     const [tours, setTours] = useState([]);
@@ -34,6 +35,25 @@ function Tours() {
         fetctTour();
     }, []);
 
+    // Delete
+    const handleDelete = (id) => {
+        if (window.confirm("Are you sure you want to delete?")) {
+          let token = localStorage.getItem("token")
+          axios({
+            url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/deleteAll?fieldName=_id&value=${id}`,
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${token}`
+            },
+          }).then((response) => {
+            toast.success("Item deleted successfully")
+            console.log(response, "Response")
+          }).catch((error) => {
+            toast.error(error.response.data.message)
+            console.log(error, "Error")
+          })
+        }
+      }
     return (
         <> 
             <Form/> 
@@ -56,17 +76,26 @@ function Tours() {
                         {
                             tours.map((t, idx) =>{
                                 return <tr key={idx}>
+<<<<<<< HEAD
                                     <td><img src={t.backdropImage} alt="" 
+=======
+                                    <td><img src={t.backdropImage} alt="img" 
+>>>>>>> 2296f8fb64726c41824b036a6777c1196a52e81b
                                         className='backdrop'
                                     /></td>
                                     <td>{t.destination}</td>
                                     <td>{t.Duration}</td>
+<<<<<<< HEAD
                                     <td>{t.GroupSize} Poeple</td>
                                     <td style={{opacity: '.7'}}>$ {t.Price}</td>
+=======
+                                    <td>{t.GroupSize}</td>
+                                    <td style={{opacity: '.6'}}>$ {t.Price}</td>
+>>>>>>> 2296f8fb64726c41824b036a6777c1196a52e81b
                                     <td >
                                     <span className='actions'>
-                                        <BsFillTrashFill className='delete-btn' onClick={() => deleteRow(idx)}/>
-                                        <BsFillPencilFill onClick={() => editRow(idx)}/>
+                                        <BsFillTrashFill onClick={() => handleDelete(t._id)} className='delete-btn'/>
+                                        <Link to={`Edit/${t._id}`}><BsFillPencilFill /></Link>
                                     </span>
                                 </td>
                                 </tr>

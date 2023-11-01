@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/tourlist.css';
+import './styles/Tourlist.css';
 import {BiSolidDownArrow} from 'react-icons/bi';
 import {BsFillClockFill} from 'react-icons/bs';
 import { MdGroup } from 'react-icons/md';
