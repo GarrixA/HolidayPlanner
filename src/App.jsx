@@ -14,6 +14,9 @@ import Tours from './Components/Dashboard/Tours';
 import Login from './Components/Elements/Users/Login';
 import Signup from './Components/Elements/Users/Signup';
 import Edit from './Components/Dashboard/Functionalities/Edit';
+import Chart from './Components/Dashboard/Chart';
+import Bookings from './Components/Dashboard/Fetch/Bookings';
+import Users from './Components/Dashboard/Fetch/Users';
 
 function App() {
 
@@ -34,8 +37,12 @@ function App() {
           </Route>
 
           <Route path='Dashboard' element={<Dashbord/>}>
+            <Route index element={<Chart/>}/>
             <Route path='Tours' element={<Tours/>}/>
             <Route path='Tours/Edit/:id' element={<Edit/>}/>
+            <Route path='Chart' element={<Chart/>}/>
+            <Route path='Bookings' element={<Bookings/>}/>
+            <Route path='Users' element={<Users/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
