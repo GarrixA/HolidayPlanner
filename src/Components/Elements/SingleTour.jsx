@@ -12,13 +12,13 @@ import {FaSun} from 'react-icons/fa6';
 import video from '../../images/video.mp4';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 function SingleTour() {
 
-  const params = useParams();
-    let tourId = params.id;
     const [backdropImage, setBackdropImage] = useState();
     const [destinationImage, setDestinationImage] = useState();
     const [destination, setDestination] = useState();
@@ -53,6 +53,47 @@ function SingleTour() {
     useEffect(() => {
       fetchTour();
     }, []);
+
+    const [bookFormName, setBookFormName] = useState();
+    const [bookFormEmail, setBookFormEmail] = useState();
+    const [bookFormPhone, setBookFormPhone] = useState();
+    const [bookFormDate, setBookFormDate] = useState();
+    const [bookFormTicketsNumber, setBookFormTicketsNumber] = useState();
+    const params = useParams();
+    let tourId = params.id;
+    const submitBooking = (e) => {
+      e.preventDefault();
+      let data = new FormData();
+      data.append("tourID", tourId);
+      data.append("fullname", bookFormName);
+      data.append("email", bookFormEmail);
+      data.append("phone", bookFormPhone);
+      data.append("date", bookFormDate);
+      data.append("numberOfTickets", bookFormTicketsNumber);
+
+      let token = localStorage.getItem("token");
+        console.log(token);
+        axios({
+          method: "POST",
+          url: "https://holiday-planner-4lnj.onrender.com/api/v1/booking/create",
+          data: data,
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        })
+          .then((Response) => {
+            console.log(Response);
+            toast.success(Response.data.message);
+            setTimeout(() => {
+              navigate("/tour");
+            }, 2000);
+          })
+          .catch((error) => {
+            console.log(error);
+            toast.error(error.message);
+          });
+      };
 
   return (
     <div className='main'>
@@ -117,21 +158,46 @@ function SingleTour() {
               </div>
             
               <div className="rights">
-              <h1 style={{color: 'black'}}>BOOK THIS TOUR</h1>
+              <h1 style={{color: 'black'}} >BOOK THIS TOUR</h1>
                 <div className="inputs">
                 
-                <input type="text" placeholder='fullname' required/>
-                <input type="text" placeholder='email' required/>
+                <input type="text" placeholder='fullname' required
+                  onChange={(e) =>{
+                    e.preventDefault();
+                    setBookFormName(e.target.value);
+                  }}
+                />
+                <input type="text" placeholder='email' required
+                  onChange={(e) =>{
+                    e.preventDefault();
+                    setBookFormEmail(e.target.value);
+                  }}
+                />
                 <input type="text" placeholder='confirm email' required/>
-                <input type="text" placeholder='phone'/>
-                <input type="date" />
-                <input type="number" placeholder='number of tickets'/>
+                <input type="text" placeholder='phone'
+                  onChange={(e) =>{
+                    e.preventDefault();
+                    setBookFormPhone(e.target.value);
+                  }}
+                />
+                <input type="date" 
+                  onChange={(e) =>{
+                    e.preventDefault();
+                    setBookFormDate(e.target.value);
+                  }}
+                />
+                <input type="number" placeholder='number of tickets'
+                  onChange={(e) =>{
+                    e.preventDefault();
+                    setBookFormTicketsNumber(parseInt(e.target.value));
+                  }}
+                />
                 <textarea type="text" placeholder='message' style={{width: '84%', height: '6rem'}}></textarea>
                 <div className="box" style={{display: 'flex'}}>
                   <input type="checkbox" style={{width: '70px', marginLeft: '1.5rem'}}/>
                   <label >Check Availability</label>
                 </div>
-                <button className='booknow'>BOOK NOW</button>
+                <button className='booknow' onClick={submitBooking}>BOOK NOW</button>
                 </div>
               </div>
             </div>

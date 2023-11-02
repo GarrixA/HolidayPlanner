@@ -20,6 +20,7 @@ import Bookings from './Components/Dashboard/Fetch/Bookings';
 import Users from './Components/Dashboard/Fetch/Users';
 import Cards from './Components/Dashboard/Components/Cards';
 import Useredit from './Components/Dashboard/Fetch/Useredit';
+import Editbooking from './Components/Dashboard/Fetch/Editbookings';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
             <Route path='Bookings' element={<Bookings/>}/>
             <Route path='Users' element={<Users/>}/>
             <Route path='Cards' element={<Cards/>}/>
+            <Route path='Bookings/Editbookings/:id' element={<Editbooking/>}/>
             <Route path='Users/Useredit/:id' element={<Useredit/>}/>
           </Route>
         </Routes>

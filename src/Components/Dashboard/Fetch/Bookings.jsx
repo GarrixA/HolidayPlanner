@@ -84,7 +84,7 @@ function Bookings() {
                                     <td >
                                     <span className='actions'>
                                         <BsFillTrashFill onClick={() => handleDelete(item._id)} className='delete-btn'/>
-                                        <Link to={`Edit/${item._id}`}><BsFillPencilFill /></Link>
+                                        <Link to={`Editbookings/${item.id}`}><BsFillPencilFill /></Link>
                                     </span>
                                 </td>
                                 </tr>
