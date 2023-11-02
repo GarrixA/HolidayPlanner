@@ -23,8 +23,8 @@ function Tours() {
             })
             .then((response) =>{
                 console.log(response);
-                setTours(response.data)
-                toast.success("well done")
+                setTours(response.data);
+
             })
             .catch((error) =>{
                 console.log(error);
@@ -47,6 +47,9 @@ function Tours() {
             },
           }).then((response) => {
             toast.success("Item deleted successfully")
+            setTimeout(() => {
+                window.location.reload
+            }, 3000);
             console.log(response, "Response")
           }).catch((error) => {
             toast.error(error.response.data.message)

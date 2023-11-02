@@ -6,10 +6,12 @@ import { useEffect } from 'react';
 import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function Users() {
     const [users, setUsers] = useState([]);
+    const Navigate = useNavigate();
     
     console.log(users)
     useEffect(()=>{
@@ -23,8 +25,10 @@ function Users() {
             })
             .then((response) =>{
                 console.log(response);
-                setUsers(response.data)
-                toast.success("User Added")
+                setUsers(response.data);
+                setTimeout(() => {
+                    window.location.reload
+                }, 3000);
             })
             .catch((error) =>{
                 console.log(error);
@@ -40,7 +44,7 @@ function Users() {
         if (window.confirm("Are you sure you want to delete?")) {
           let token = localStorage.getItem("token")
           axios({
-            url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/deleteAll?fieldName=_id&value=${id}`,
+            url: `https://holiday-planner-4lnj.onrender.com/api/v1/users/auth/delete${id}`,
             method: "DELETE",
             headers: {
               Authorization: `Bearer ${token}`
@@ -48,6 +52,7 @@ function Users() {
           }).then((response) => {
             toast.success("Item deleted successfully")
             console.log(response, "Response")
+            Navigate('Dashboard/Users/Editusers')
           }).catch((error) => {
             toast.error(error.response.data.message)
             console.log(error, "Error")
@@ -58,7 +63,7 @@ function Users() {
     <div className="table-wrapper">
                 <h1>Users</h1>
             <div className="table">
-                <ToastContainer/>
+
                 <table>
                     <thead>
                         <tr>
@@ -83,7 +88,7 @@ function Users() {
                                     <td >
                                     <span className='actions'>
                                         <BsFillTrashFill onClick={() => handleDelete(item._id)} className='delete-btn'/>
-                                        <Link to={`Edit/${item._id}`}><BsFillPencilFill /></Link>
+                                        <Link to={`Useredit/${item._id}`}> <BsFillPencilFill /></Link>
                                     </span>
                                 </td>
                                 </tr>
@@ -93,6 +98,7 @@ function Users() {
                 </table>
                 
             </div>
+            <ToastContainer/>
             </div>
   )
 }

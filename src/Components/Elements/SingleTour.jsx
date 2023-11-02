@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/Singletour.css';
 import {FaInfoCircle} from 'react-icons/fa';
 import {FaBookOpen} from 'react-icons/fa';
@@ -10,14 +10,56 @@ import {FaUserGroup} from 'react-icons/fa6';
 import {BsFillPersonPlusFill} from 'react-icons/bs';
 import {FaSun} from 'react-icons/fa6';
 import video from '../../images/video.mp4';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 function SingleTour() {
+
+  const params = useParams();
+    let tourId = params.id;
+    const [backdropImage, setBackdropImage] = useState();
+    const [destinationImage, setDestinationImage] = useState();
+    const [destination, setDestination] = useState();
+    const [Title, setTitle] = useState();
+    const [Description, setDescription] = useState();
+    const [Duration, setDuration] = useState();
+    const [GroupSize, setGroupSize] = useState();
+    const [Price, setPrice] = useState();
+    const fetchTour = () => {
+      let token = localStorage.getItem("token");
+      axios({
+        method: "GET",
+        url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/getElement?fieldName=_id&value=${tourId}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          setDestinationImage(response?.data?.backdropImage);
+          setDestination(response?.data?.destination);
+          setTitle(response?.data?.Title);
+          setDescription(response?.data?.Description);
+          setDuration(response?.data?.Duration);
+          setGroupSize(response?.data?.GroupSize);
+          setPrice(response?.data?.Price);
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    useEffect(() => {
+      fetchTour();
+    }, []);
+
   return (
     <div className='main'>
-          <div className="top-part">
-            <h1 style={{fontSize: '6rem', color: "#fff"}}>Italy</h1>
+          <div className="top-part"
+            style={{backgroundImage: `url(${destinationImage})`}}
+          >
+            <h1 style={{fontSize: '6rem', color: "#fff"}}>{Title}</h1>
           </div>
               <div className="left">
                 <div className="inform">
@@ -34,7 +76,7 @@ function SingleTour() {
                   <h1>A wonderful serenity has taken possession of my entire soul</h1>
                   <div className="shades">
                     <div className="circle">
-                      <h1>$1200</h1>
+                      <h1>$ {Price}</h1>
                       <hr />
                       <h5>Per Person</h5>
                     </div>

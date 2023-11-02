@@ -1,0 +1,47 @@
+.main-cards{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+    box-shadow: 1px 1px 3px 4px rgb(49, 49, 49, 0.4);
+    border-radius: 4px;
+    margin: 12px;
+    padding: 12px;
+}
+.cards-wrapp{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     background-color: beige;
+     /* border: 1px solid black; */
+     display: flex;
+     justify-content: space-between;
+     width: 20%;
+     padding: 12px;
+     
+}
+.cards-image{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+
+}
+.cards-image img{
+    height: 80px;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    
+}
+
+.cards-details{
+    /* background-color: blue; */
+    flex-grow: 2;
+    height: 80px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

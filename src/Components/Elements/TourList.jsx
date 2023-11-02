@@ -3,13 +3,17 @@ import './styles/Tourlist.css';
 import {BiSolidDownArrow} from 'react-icons/bi';
 import {BsFillClockFill} from 'react-icons/bs';
 import { MdGroup } from 'react-icons/md';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import tour from '../Arrays/Tour';
 import { useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function TourList() {
+
+    const Navigate = useNavigate();
 
     const [tours, setTours] = useState([]);
     
@@ -75,8 +79,9 @@ function TourList() {
         
                                                 <div className='tour-book'>
                                                     <h3>{item.Price}</h3>
-                                                    <button><Link 
-                                                    to={'/SingleTour'}>Book Now</Link></button>
+                                                    <button
+                                                     
+                                                        onClick={Navigate(`SingleTour/${item._id}`)}>Book Now</button>
                                                 </div>
                                             </div>
                                     </div>

@@ -51,7 +51,7 @@ function Form() {
     }
     return (
         <>
-        <ToastContainer/>
+        
            <button className='open-modal' onClick={toggleModal}>
                     Add Tour
                 </button>
@@ -96,7 +96,7 @@ function Form() {
                     <input type="submit" className='submit-button' onClick={handleForm}/>
                    </form>
                 </div>
-                
+                <ToastContainer/>
             </div>
             )}
             

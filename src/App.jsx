@@ -18,6 +18,8 @@ import Edit from './Components/Dashboard/Functionalities/Edit';
 import Chart from './Components/Dashboard/Chart';
 import Bookings from './Components/Dashboard/Fetch/Bookings';
 import Users from './Components/Dashboard/Fetch/Users';
+import Cards from './Components/Dashboard/Components/Cards';
+import Useredit from './Components/Dashboard/Fetch/Useredit';
 
 function App() {
 
@@ -30,7 +32,7 @@ function App() {
             <Route path='About' element={<About/>}/>
             <Route path='ContactUs' element={<ContactUs/>}/>
             <Route path='TourList' element={<TourList/>}/>
-            <Route path='SingleTour' element={<SingleTour/>}/>
+            <Route path='SingleTour/:id' element={<SingleTour/>}/>
             <Route path='AmazingTours' element={<AmezingTours/>}/>
             <Route path='Login' element={<Login/>}/>
             <Route path='Signup' element={<Signup/>}/>
@@ -44,6 +46,8 @@ function App() {
             <Route path='Chart' element={<Chart/>}/>
             <Route path='Bookings' element={<Bookings/>}/>
             <Route path='Users' element={<Users/>}/>
+            <Route path='Cards' element={<Cards/>}/>
+            <Route path='Users/Useredit/:id' element={<Useredit/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

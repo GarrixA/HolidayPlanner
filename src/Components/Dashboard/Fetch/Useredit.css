@@ -1,0 +1,14 @@
+.edit-user{
+    background-color: red;
+}
+
+.edit-user form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.edit-user form input{
+    padding: 12px;
+
+}
