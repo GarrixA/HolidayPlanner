@@ -87,7 +87,7 @@
 
 /* find your tour and related the line */
 .find{
-    width: 25%;
+    width: 30%;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -97,6 +97,7 @@
     bottom: 120px;
     padding-bottom: 2rem;
     box-shadow: 1px 1px 8px 1px rgba(3, 3, 3, 0.2);
+    height: 50%;
 }
 
 .text{
@@ -104,7 +105,7 @@
     flex-direction: row;
     align-items: center;
     gap: 4px;
-    margin-left: 43px;
+    margin-left: 38px;
     margin-top: 12px;
 }
 .text .lin{
@@ -121,16 +122,16 @@
     border: 1px solid #000;
     padding: 4px;
     margin-top: 12px;
-    margin-left: 43px;
+    margin-left: 30px;
     font-size: 1.1rem;
 }
 
 /* p looks like inputs that holds icons */
 .inputs p{
-    width: 75%;
-    height: 4vh;
+    width: 80%;
+    height: 5.5vh;
     margin-top: 12px;
-    margin-left: 43px;
+    margin-left: 28px;
     padding: 4px;
     border-radius: 4px;
     display: flex;
@@ -142,10 +143,11 @@
 }
 
 .inputs h1{
-    margin-left: 43px;
+    margin-left: 30px;
     color: #000000;
     font-size: 1.3rem;
     margin-top: 12px;
+    width: 80%;
 }
 
 
@@ -224,7 +226,7 @@
 
 .tour-italy{
     background-color: #c29d59;
-    width: 18%;
+    width: 30%;
     text-align: center;
     padding: 8px;
     font-size: 1.3rem;
@@ -236,6 +238,7 @@
 .holiday{
     font-size: 1.2rem;
     margin: 0% 6%;
+    padding-bottom: 12px;
 }
 
 .holiday-description{
@@ -285,7 +288,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin: 0px 0px 0px 17px;
+    margin: 0px 0px 0px 6px;
     /* width: 50%; */
     padding: 12px 0px;
 }
@@ -295,6 +298,8 @@
     flex-direction: row;
     align-items: center;
     gap: 6px;
+    font-size: .89rem;
+    margin-right: 10px;
 }
 .tour-partone p{
     margin-left: 13%;
