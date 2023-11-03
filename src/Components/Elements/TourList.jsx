@@ -79,7 +79,7 @@ function TourList() {
         
                                                 <div className='tour-book'>
                                                     <h3>{item.Price}</h3>
-                                                    <Link to={`SingleTour/${item._id}`}> <button
+                                                    <Link to={`Tourlist/SingleTour/${item._id}`}> <button
                                                      
                                                         >Book Now</button></Link>
                                                 </div>

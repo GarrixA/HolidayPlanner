@@ -45,10 +45,15 @@ function Chart() {
             backgroundColor: '#c29d59',
           },
           {
-            label: 'Users',
-            data: labels.map(() => ({ min: 0, max: 1000 })),
-            backgroundColor: 'grey',
+            label: 'Bookings',
+            data: ['70', '40', '59', '10', '28', '35', '19'],
+            backgroundColor: 'skyblue',
           },
+          {
+            label: 'Users',
+            data: ['120', '60', '39', '40', '30', '55', '15'],
+            backgroundColor: 'orange',
+          }
         ],
       };
   return (
@@ -59,6 +64,10 @@ function Chart() {
         </div>
         <div className="chart">
           <Bar options={options} data={data}
+            style={{
+              width: '400px',
+              height: '60px',
+            }}
           />
           </div>
       </div>

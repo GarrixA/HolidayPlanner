@@ -85,9 +85,9 @@ function SingleTour() {
           .then((Response) => {
             console.log(Response);
             toast.success(Response.data.message);
-            // setTimeout(() => {
-            //   navigate("/tour");
-            // }, 2000);
+            setTimeout(() => {
+              navigate("/tour");
+            }, 2000);
           })
           .catch((error) => {
             console.log(error);
@@ -98,9 +98,13 @@ function SingleTour() {
   return (
     <div className='main'>
           <div className="top-part"
-            style={{backgroundImage: `url(${destinationImage})`}}
+            style={{
+              backgroundImage: `url(${destinationImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'cover'
+            }}
           >
-            <h1 style={{fontSize: '6rem', color: "#c29d59"}}>{Title}</h1>
+            <h1 style={{fontSize: '3rem', color: "#c29d59"}}>{Title}</h1>
           </div>
               <div className="left">
                 <div className="inform">

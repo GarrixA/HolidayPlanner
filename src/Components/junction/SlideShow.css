@@ -28,11 +28,20 @@
     font-size: 1.2rem;
     position: absolute;
     top: 50%;
-    width: 2%;
+    width: 4%;
     align-items: center;
     border: 1px solid #c29d59;
     background-color: #c29d59;
     border-radius: 2px;
+}
+
+.buttons .priv-button:hover{
+    background-color: black;
+    color: #fff;
+    border: 1px;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .buttons .next-button{
@@ -42,11 +51,20 @@
     position: absolute;
     top: 50%;
     right: 0;
-    width: 2%;
+    width: 4%;
     align-items: center;
     border: 1px solid #c29d59;
     background-color: #c29d59;
     border-radius: 2px;
+}
+
+.buttons .next-button:hover{
+    background-color: #000;
+    color: #fff;
+    border: 1px;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .slide h1{
