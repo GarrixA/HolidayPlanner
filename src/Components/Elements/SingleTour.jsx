@@ -54,7 +54,6 @@ function SingleTour() {
       fetchTour();
     }, []);
 
-    const Navigate = useNavigate();
     const [bookFormName, setBookFormName] = useState();
     const [bookFormEmail, setBookFormEmail] = useState();
     const [bookFormPhone, setBookFormPhone] = useState();
@@ -87,13 +86,15 @@ function SingleTour() {
             console.log(Response);
 
             setTimeout(() => {
-              // toast.success(Response.data.message);
+              toast.success(Response.data.message);
+              toast.success("Welcome")
               // Navigate("Tours");
             }, 2000);
           })
           .catch((error) => {
             console.log(error);
             toast.error(error.message);
+            toast.error("Please login to book a tour")
           });
       };
 

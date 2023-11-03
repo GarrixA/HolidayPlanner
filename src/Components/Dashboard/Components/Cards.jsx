@@ -5,15 +5,15 @@ const cards = [
     {
         image: image,
         title: 'Tours',
-        quant: '123',
+        quant: '217',
     },{
         image: image,
         title: 'Bookings',
-        quant: '123',
+        quant: '279',
     },{
         image: image,
         title: 'Users',
-        quant: '123',
+        quant: '398',
     }
 ]
 

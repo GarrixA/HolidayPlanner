@@ -7,49 +7,48 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 function EditUser() {
-    const [email, setEmail] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [passWord, setPassword] = useState('');
+    const [userName, setUserName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [userRole, setUserRole] = useState('');
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
     const params = useParams()
-    const userId = params.id
-    const fetchUserDash = () => {
+    const tourId = params.id
+    const fetchUser = () => {
       const token = localStorage.getItem('token');
       axios({
         method: "GET",
-        url: `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/getOne/?fieldName=_id&value=${userId}`,
+        url: `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/getOne/?fieldName=_id&value=${tourId}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {
         console.log (response, "response");
-        setEmail    (response?.data?.email);
-        setFirstName(response?.data?.firstName);
-        setLastName (response?.data?.lastName);
-        setPassword (response?.data?.passWord);
+        setUserEmail(response?.data?.email);
+        setUserName(response?.data?.fullName);
+        setUserRole(response?.data?.role);
       })
       .catch((error)=>{
         console.log(error);
       })
     }
     useEffect(() => {
-      console.log(passWord)
-      fetchUserDash();
-    },[])
-    const handleSubmit = async (e) => {
-      let token=localStorage.getItem("token")
+      fetchUser();
+    },[]);
+
+    const handleSubmit = (e) => {
+      let token=localStorage.getItem("token");
+      setIsLoading(true)
       e.preventDefault();
-const data={
-  "firstName":firstName,
-  "lastName":lastName,
-  "email":email,
-}
+    const data={
+      "fullName": userName,
+      "email":userEmail,
+      "role":userRole,
+    }
       axios({
         method:"PUT",
-        url:`https://holiday-planner-4lnj.onrender.com/api/auth/users/update/${email}`,
+        url:`https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/update/${tourId}`  ,
         data: data,
         headers:{
             "content-type":"application/json",
@@ -59,12 +58,14 @@ const data={
     ).then((response)=>{
         console.log(response);
             toast.success("User-updated successfully");
-            setTimeout(()=>
-            navigate("/Dashboard/UserDash")
-            ,3000);
+            setIsLoading(false)
+            setTimeout(()=>{
+            navigate("/Dashboard/Users");
+          },3000);
     }).catch((error)=>{
         console.log(error);
         toast.error(error.message);
+        setIsLoading(false)
     });
 };
 return (
@@ -76,37 +77,35 @@ return (
           <div >
             <div >
               <input
-                value={email}
+                value={userEmail}
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  setUserEmail(e.target.value);
                 }}
                 type="text"
-                id="name1"
-                 placeholder="Enter your email"
+                 placeholder="Enter user's email"
               />
             </div>
             <div >
               <input
-                value={firstName}
+                value={userName}
                 onChange={(e) => {
-                  setFirstName(e.target.value);
+                  setUserName(e.target.value);
                 }}
                 type="text"
-                id="name1"
-                 placeholder="Enter your first name"
+                 placeholder="Enter your user's name"
               />
             </div>
             <div >
               <label >
               </label>
               <input
-                value={lastName}
+                value={userRole}
                 onChange={(e) => {
-                  setLastName(e.target.value);
+                  setUserRole(e.target.value);
                 }}
                 type="text"
                 id="name1"
-                placeholder="Enter your last name"
+                placeholder="Enter your user role"
               />
             </div>
             <div>
@@ -114,10 +113,10 @@ return (
               </label>
             </div>
             <button
-              onClick={(e)=> handleSubmit(e)}
+              onClick={handleSubmit}
               type="submit"
                >
-              {setIsLoading? "edit user in...":"edit"}
+              {isLoading? "Editing..":"edit"}
             </button>
             <ToastContainer/>
           </div>

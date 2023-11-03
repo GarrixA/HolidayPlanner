@@ -38,7 +38,7 @@ function SidgnUp() {
             alert("Thanks for signing up! :)");
             setIsLoading(false);
             setTimeout(() =>{
-                toast.success('Login seccessfully');
+                toast.success('Register seccessfully');
                 Navigate("/Login")
             }, 3000);
         })

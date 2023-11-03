@@ -3,115 +3,129 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, useParams } from "react-router-dom";
+import './Editbookings.css'
 const Editbooking = () => {
   const navigate = useNavigate();
   const params = useParams();
   let tourId = params.id;
-  const [fullname, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [ticket, setTicket] = useState("");
-  const [image, setImage] = useState("");
-  const fetchTour = () => {
-    console.log("haha");
+  const [fullName, setFullName] = useState("");
+  const [bookEmail, setBookEmail] = useState("");
+  const [bookPhone, setBookPhone] = useState("");
+  const [bookTicket, setBookTicket] = useState("");
+  const [bookDate, setBookDate] = useState("");
+  const [isLoading, setIsLoading] = useState();
+  
+
+  const fetchBook = () => {
+    console.log(tourId);
+
     let token = localStorage.getItem("token");
     axios({
       method: "GET",
-      url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/getElement?fieldName=_id&value=${tourId}`,
+      url: `https://holiday-planner-4lnj.onrender.com/api/v1/booking/${tourId}`,
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => {
         setFullName(response?.data?.fullname);
-        setEmail(response?.data?.email);
-        setPhone(response?.data?.phone);
-        setTicket(response?.data?.ticket);
+        setBookEmail(response?.data?.email);
+        setBookPhone(response?.data?.phone);
+        setBookTicket(response?.data?.ticket);
+        setBookDate(response?.data?.date);
       })
       .catch((error) => {
         console.log(error);
       });
   };
   useEffect(() => {
-    fetchTour();
+    fetchBook();
   }, []);
-  const handleImage = (e) => {
-    e.preventDefault();
-    console.log(e.target.files, "file");
-    setImage(e.target.files[0]);
-  };
+  
   const handleForm = (e) => {
     e.preventDefault();
-    console.log("Ru");
+    setIsLoading(true);
+
+    const data ={
+      tourId: tourId,
+      fullname: fullName,
+      email: bookEmail,
+      phone: bookPhone,
+      date: bookDate,
+      numberOfTickets: bookTicket,
+    }
     let token = localStorage.getItem("token");
-    const formData = new FormData();
-    formData.append("backdropImage", image);
-    formData.append("fullname", fullname);
-    formData.append("email", email);
-    formData.append("phone", phone);
-    formData.append("ticket", ticket);
     axios({
       method: "PUT",
-      url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/update/${tourId}`,
-      data: formData,
+      url: `https://holiday-planner-4lnj.onrender.com/api/v1/booking/update/${tourId}`,
+      data: data,
       headers: {
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => {
         console.log(response);
         toast.success(response.data.message);
+        setIsLoading(false)
+        toast.success("Booking updated")
         setTimeout(() => {
-          navigate("");
+          navigate(`/Dashboard/Bookings`);
         }, 3000);
       })
       .catch((error) => {
         console.log(error);
         toast.error(error.message);
+        setIsLoading(false)
       });
   };
   return (
     <div className="booking-edit">
-      <div className="add-tour">
+      <div className="edit-book">
         <ToastContainer />
         <form>
           <h1>Edit Booking</h1>
-          <input
-            onChange={(e) => handleImage(e)}
-            type="file"
-            id="email"
-            placeholder="enter your image"
-          />
-          <label htmlFor="fullname">Fullname</label>
+          <label >Fullname</label>
           <input
             type="text"
             placeholder="fullname"
-            value={fullname}
-            onChange={(e) => setFullName(e.target.value)}
+            value={fullName}
+            onChange={(e) => 
+              setFullName(e.target.value)}
           />
-          <label htmlFor="email">Email</label>
+          <label>Email</label>
           <input
             type="text"
             placeholder="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={bookEmail}
+            onChange={(e) => 
+              setBookEmail(e.target.value)}
           />
           <label htmlFor="phone">Phone number</label>
           <input
             type="number"
             placeholder="phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={bookPhone}
+            onChange={(e) => 
+              setBookPhone(e.target.value)}
           />
           <label htmlFor="ticket">Number of tickets</label>
           <input
             type="text"
             placeholder="ticket"
-            value={ticket}
-            onChange={(e) => setTicket(e.target.value)}
+            value={bookTicket}
+            onChange={(e) => 
+              setBookTicket(e.target.value)}
           />
-          <button onClick={handleForm}>Updating Booking</button>
+           <label htmlFor="ticket">Date</label>
+          <input
+            type="date"
+            placeholder="date"
+            value={bookDate}
+            onChange={(e) => 
+              setBookDate(e.target.value)}
+          />
+          <button onClick={handleForm}>{isLoading? "updating tour..." : "update"}</button>
         </form>
       </div>
     </div>

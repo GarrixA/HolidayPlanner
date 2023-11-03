@@ -75,7 +75,7 @@ function Bookings() {
                         {
                             bookings.map((item, idx) =>{
                                 return <tr key={idx}>
-                                    <td>{item.fullName}</td>
+                                    <td>{item.fullname}</td>
                                     <td>{item.email}</td>
                                     <td>{item.phone}</td>
                                     <td>{item.date}</td>
@@ -83,7 +83,7 @@ function Bookings() {
                                     <td >
                                     <span className='actions'>
                                         <BsFillTrashFill onClick={() => handleDelete(item._id)} className='delete-btn'/>
-                                        <Link to={`Editbookings/${item.id}`}><BsFillPencilFill /></Link>
+                                        <Link to={`Editbookings/${item._id}`}><BsFillPencilFill /></Link>
                                     </span>
                                 </td>
                                 </tr>
