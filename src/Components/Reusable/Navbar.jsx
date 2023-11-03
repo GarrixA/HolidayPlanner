@@ -44,7 +44,7 @@ function Navbar( ) {
                     <img src={image1} alt="img" />
                 </div>
                 <div className="reserve">
-                    <button>Reseve</button>
+                    <button>Reserve</button>
                     <FaSearch className='search'/>
                     <TbMenuDeep className='menu' onClick={toggleModal}/>
 

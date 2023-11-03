@@ -4,8 +4,10 @@ import image1 from '../../../images/login.png';
 import { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 function SidgnUp() {
+    const Navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -33,24 +35,18 @@ function SidgnUp() {
         .then((response) =>{
             console.log(response, "response");
             localStorage.setItem("token", response.data.access_token);
-            // Navigate("/")
-            alert("User successfully registered");
+            alert("Thanks for signing up! :)");
             setIsLoading(false);
-            toast.success("well done")
+            setTimeout(() =>{
+                toast.success('Login seccessfully');
+                Navigate("/Login")
+            }, 3000);
         })
 
         .catch((error) =>{
             console.log(error);
-            alert("Error happenning");
-            toast.error("error");
-            // setIsLoading(false);
+            toast.error("Please fill the empty fields");
         });
-
-        // setEmail('');
-        // setFirstName('');
-        // setLastName('');
-        // setPassword('');
-        // setConfirmPassword('');
     }
 
   return (
@@ -103,8 +99,7 @@ function SidgnUp() {
                 <div className="signup-button">
                      <button type='submit' 
                     onClick={handleSignup} 
-                    >
-                        Sign Up
+                    >{isLoading ? "Signing up...": "Sign up"}
                     </button>
                     
                 </div>

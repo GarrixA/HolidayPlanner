@@ -142,7 +142,14 @@
     background-color: #c29d59;
     border: 1px solid #c29d59;
     cursor: pointer;
+    font-weight: 800;
 }
+
+.reserve > button:hover{
+    background-color: #000;
+    color: #fff;
+}
+
 
 .reserve > .search{
     color: #000;

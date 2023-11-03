@@ -10,7 +10,7 @@ import {FaUserGroup} from 'react-icons/fa6';
 import {BsFillPersonPlusFill} from 'react-icons/bs';
 import {FaSun} from 'react-icons/fa6';
 import video from '../../images/video.mp4';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -54,6 +54,7 @@ function SingleTour() {
       fetchTour();
     }, []);
 
+    const Navigate = useNavigate();
     const [bookFormName, setBookFormName] = useState();
     const [bookFormEmail, setBookFormEmail] = useState();
     const [bookFormPhone, setBookFormPhone] = useState();
@@ -84,9 +85,10 @@ function SingleTour() {
         })
           .then((Response) => {
             console.log(Response);
-            toast.success(Response.data.message);
+
             setTimeout(() => {
-              navigate("/tour");
+              // toast.success(Response.data.message);
+              // Navigate("Tours");
             }, 2000);
           })
           .catch((error) => {
@@ -201,7 +203,7 @@ function SingleTour() {
                   <input type="checkbox" style={{width: '70px', marginLeft: '1.5rem'}}/>
                   <label >Check Availability</label>
                 </div>
-                <button className='booknow' onClick={submitBooking}>BOOK NOW</button>
+                <button type='submit' className='booknow' onClick={submitBooking}>BOOK NOW</button>
                 </div>
               </div>
             </div>

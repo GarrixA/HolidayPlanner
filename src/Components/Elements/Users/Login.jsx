@@ -27,14 +27,17 @@ function Login() {
         })
         .then((Response) =>{
             localStorage.setItem('token', Response.data.access_token);
-            toast.success('Login seccessfully');
+
             setTimeout(() =>{
+                setIsLoading(false)
+                toast.success('Login seccessfully');
                 Navigate("/Dashboard")
             }, 3000);
         })
         .catch((error) =>{
             console.log(error);
             toast.error('login failed!!!')
+            setIsLoading(false);
         })
     }
   return (
@@ -80,7 +83,7 @@ function Login() {
                 </div>
 
                 <div className="signin-button">
-                    <button onClick={handleLogin}>Login</button>
+                    <button onClick={handleLogin}>{isLoading? "Loging in..." : "Login"}</button>
                 </div>
                 <div className="google">
                     <button className='chrome'><FcGoogle/> Google</button>
