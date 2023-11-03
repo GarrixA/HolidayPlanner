@@ -24,7 +24,6 @@ function Bookings() {
     .then((response) => {
         console.log(response.data);
         setBookings(response.data);
-        toast.success(response.data.message);
       })
       .catch((error) => {
         console.log(error);

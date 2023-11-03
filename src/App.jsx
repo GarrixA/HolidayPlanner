@@ -33,12 +33,12 @@ function App() {
             <Route path='About' element={<About/>}/>
             <Route path='ContactUs' element={<ContactUs/>}/>
             <Route path='TourList' element={<TourList/>}/>
-            <Route path='SingleTour/:id' element={<SingleTour/>}/>
+            <Route path='TourList/SingleTour/:id' element={<SingleTour/>}/>
             <Route path='AmazingTours' element={<AmezingTours/>}/>
-            <Route path='Login' element={<Login/>}/>
-            <Route path='Signup' element={<Signup/>}/>
             <Route path='*' element={<Error/>}/>
           </Route>
+            <Route path='Login' element={<Login/>}/>
+            <Route path='Signup' element={<Signup/>}/>
 
           <Route path='Dashboard' element={<Dashbord/>}>
             <Route index element={<Chart/>}/>

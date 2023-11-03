@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function TourList() {
 
-    const Navigate = useNavigate();
+    // const Navigate = useNavigate();
 
     const [tours, setTours] = useState([]);
     
@@ -24,7 +24,7 @@ function TourList() {
                 method: 'GET',
                 url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/",
                 headers: {
-                    "Content-Type": "Application/json",
+                    "Content-Type": "application/json",
                 }
             })
             .then((response) =>{
@@ -79,9 +79,9 @@ function TourList() {
         
                                                 <div className='tour-book'>
                                                     <h3>{item.Price}</h3>
-                                                    <button
+                                                    <Link to={`SingleTour/${item._id}`}> <button
                                                      
-                                                        onClick={Navigate(`SingleTour/${item._id}`)}>Book Now</button>
+                                                        >Book Now</button></Link>
                                                 </div>
                                             </div>
                                     </div>
