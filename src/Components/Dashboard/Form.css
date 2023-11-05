@@ -84,10 +84,10 @@
 @media (max-width: 414px){
     .modal{
         /* background-color: red; */
-        /* width: 100%; */
+        width: 100%;
     }
     .modal-contents{
-        /* width: 85%; */
+        width: 85%;
     }
     .modal-contents h1{
         font-size: 1.4rem;
