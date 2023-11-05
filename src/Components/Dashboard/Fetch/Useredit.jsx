@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import { Navigate,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import './Useredit.css';
+
 function EditUser() {
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userRole, setUserRole] = useState('');
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
     const params = useParams()
     const tourId = params.id
@@ -60,7 +61,7 @@ function EditUser() {
             toast.success("User-updated successfully");
             setIsLoading(false)
             setTimeout(()=>{
-            navigate("/Dashboard/Users");
+            Navigate("/Dashboard/Users");
           },3000);
     }).catch((error)=>{
         console.log(error);
@@ -69,13 +70,11 @@ function EditUser() {
     });
 };
 return (
-    <div>
-      <div >
+    <div className='useredit'>
         <form
           id="form">
-          <h2 >edit user</h2>
-          <div >
-            <div >
+          <h2 >Edit User</h2>
+              <label>User's Email</label>
               <input
                 value={userEmail}
                 onChange={(e) => {
@@ -84,8 +83,8 @@ return (
                 type="text"
                  placeholder="Enter user's email"
               />
-            </div>
-            <div >
+
+              <label> User's Name</label>
               <input
                 value={userName}
                 onChange={(e) => {
@@ -94,10 +93,7 @@ return (
                 type="text"
                  placeholder="Enter your user's name"
               />
-            </div>
-            <div >
-              <label >
-              </label>
+              <label>User's Role</label>
               <input
                 value={userRole}
                 onChange={(e) => {
@@ -107,11 +103,6 @@ return (
                 id="name1"
                 placeholder="Enter your user role"
               />
-            </div>
-            <div>
-              <label >
-              </label>
-            </div>
             <button
               onClick={handleSubmit}
               type="submit"
@@ -119,9 +110,7 @@ return (
               {isLoading? "Editing..":"edit"}
             </button>
             <ToastContainer/>
-          </div>
         </form>
-      </div>
     </div>
   );
 };

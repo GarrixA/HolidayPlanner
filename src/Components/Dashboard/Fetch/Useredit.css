@@ -1,14 +1,59 @@
-.edit-user{
-    background-color: red;
-}
-
-.edit-user form{
+.useredit{
+    background-color: rgba(0, 0, 0, .5);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.useredit form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 40%;
+    background-color: #fff;
+    padding: 2rem;
+}
+
+.useredit form input{
+    padding: 12px;
+    border: 2px solid #c29d59;
+    border-radius: 4px;
     width: 60%;
 }
 
-.edit-user form input{
-    padding: 12px;
+.useredit form label{
+    width: 65%;
+    margin-top: 8px;
+}
 
+.useredit form button{
+    padding: 4px;
+    width: 30%;
+    margin: 8px;
+    height: 2.5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #fff;
+    border: 1px;
+    border-radius: 4px;
+    background-color: #c29d59;
+}
+
+/* responsive */
+
+@media (max-width: 414px){
+    .useredit{
+        justify-content: flex-start;
+    }
+    .useredit form{
+        width: 70%;
+        margin-top: 15%;
+    }
+
+    .useredit form button{
+        width: 50%;
+    }
 }

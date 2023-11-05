@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Form() {
+    const [isLoading, setIsLoading] = useState();
     const [openModal, setOpenModal] = useState(false);
     const [price, setPrice] = useState("");
     const [destination, setDestination] = useState("");
@@ -24,25 +25,30 @@ function Form() {
     formData.append("GroupSize", GroupSize);
     formData.append("Price", price);
     const handleForm = (e) => {
-    e.preventDefault();
-    axios({
-      method: "POST",
-      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
-      data: formData,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
+      setIsLoading(true);
+      e.preventDefault();
+      axios({
+        method: "POST",
+        url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
+        data: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((response) => {
         console.log(response);
-        toast.success(response.data.message);
+        // toast.success(response.data.message);
+        toast.success("Tour added successfully")
+        setIsLoading(false);
         setTimeout(() => {
           toggleModal();
         }, 3000);
       })
       .catch((error) => {
         console.log(error);
-        toast.error(error.message);
+        // toast.error(error.message);
+        toast.error("please fill the empty fields")
+        setIsLoading(false);
       });
   };
 
@@ -59,7 +65,7 @@ function Form() {
                 <div className="modal">
                 <div className="modal-contents">
                 <button onClick={toggleModal} className='close-modal'>X</button>
-                    <h1>Boook your future tour</h1>
+                    <h1>Add your future tour</h1>
                    <form>
                     <label>Tour Image</label>
                     <input name='image' type="File" 
@@ -93,7 +99,7 @@ function Form() {
                           setPrice(e.target.value);
                         }}
                     />
-                    <input type="submit" className='submit-button' onClick={handleForm}/>
+                    <button className='submit-button' onClick={handleForm}>{isLoading? "Adding..." : "Add"}</button>
                    </form>
                 </div>
                 <ToastContainer/>

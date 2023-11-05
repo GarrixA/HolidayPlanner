@@ -489,8 +489,10 @@
     .navbar-container{
         width: 414px;
     }
-   .black-nav{
+    .navbar-container > .black-nav{
+    position: fixed;
     display: none;
+    z-index: 0;
    }
     .white-nav{
         width: 100%;

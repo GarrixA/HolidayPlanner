@@ -80,7 +80,6 @@ const Editbooking = () => {
       });
   };
   return (
-    <div className="booking-edit">
       <div className="edit-book">
         <ToastContainer />
         <form>
@@ -125,10 +124,9 @@ const Editbooking = () => {
             onChange={(e) => 
               setBookDate(e.target.value)}
           />
-          <button onClick={handleForm}>{isLoading? "updating tour..." : "update"}</button>
+          <button onClick={handleForm}>{isLoading? "updating..." : "update"}</button>
         </form>
       </div>
-    </div>
   );
 };
 export default Editbooking;

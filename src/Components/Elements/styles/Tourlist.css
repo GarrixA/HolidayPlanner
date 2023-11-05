@@ -226,7 +226,7 @@
 
 .tour-italy{
     background-color: #c29d59;
-    width: 30%;
+    width: 50%;
     text-align: center;
     padding: 8px;
     font-size: 1.3rem;
@@ -305,6 +305,10 @@
     margin-left: 13%;
 }
 
+.booknow-button{
+    width: 100px;
+}
+
 /* responsive */
 
 @media (max-width: 414px){
@@ -322,7 +326,7 @@
     }
     .showlist span {
         width: 40%;
-        font-size: 1.2rem;
+        font-size: 1rem;
         height: 5vh;
         display: flex;
         flex-direction: row;
@@ -370,8 +374,6 @@
     }
     .inputs h1{
         margin-left: 0px;
-        /* width: 80%; */
-        margin-right: 4rem;
     }
 
 }

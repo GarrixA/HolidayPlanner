@@ -45,6 +45,9 @@ function Bookings() {
             },
           })
             .then((response) => {
+              setTimeout(() => {
+                window.location.reload
+            }, 3000);
               toast.success("Booking deleted successfully");
               console.log(response, "response");
             })

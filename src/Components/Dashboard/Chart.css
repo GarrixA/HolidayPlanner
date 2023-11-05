@@ -1,0 +1,25 @@
+.chart{
+    width: 90%;
+    /* background-color: red; */
+    height: 60vh;
+}
+
+
+@media (max-width: 414px){
+    .main-chart{
+        max-width: 414px;
+        /* background-color: aqua; */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .chart{
+        width: 90%;
+        /* background-color: red; */
+        height: 35vh;
+    }
+    
+}

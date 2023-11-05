@@ -45,7 +45,8 @@ function SidgnUp() {
 
         .catch((error) =>{
             console.log(error);
-            toast.error("Please fill the empty fields");
+            toast.error("Failed try again later");
+            setIsLoading(false);
         });
     }
 

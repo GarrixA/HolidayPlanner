@@ -19,6 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function SingleTour() {
 
+    const Navigate = useNavigate();
     const [backdropImage, setBackdropImage] = useState();
     const [destinationImage, setDestinationImage] = useState();
     const [destination, setDestination] = useState();
@@ -83,12 +84,12 @@ function SingleTour() {
           },
         })
           .then((Response) => {
+            alert('Tour booked successfully')
             console.log(Response);
-
+            // toast.success(Response.data.message);
+            toast.success("Thank you for booking tour with us")
             setTimeout(() => {
-              toast.success(Response.data.message);
-              toast.success("Welcome")
-              // Navigate("Tours");
+              Navigate("/");
             }, 2000);
           })
           .catch((error) => {

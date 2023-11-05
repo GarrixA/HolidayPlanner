@@ -30,7 +30,6 @@ function TourList() {
             .then((response) =>{
                 console.log(response);
                 setTours(response.data)
-                toast.success("well done")
             })
             .catch((error) =>{
                 console.log(error);
@@ -53,7 +52,7 @@ function TourList() {
             </div>
             <div className="tours">
                 <div className='tourlist-container'>
-                
+                        <ToastContainer/>
                         <div className='tourlist'>
                         {
                                     tours.map((item, idx) =>{
@@ -78,9 +77,9 @@ function TourList() {
                                                 </div>
         
                                                 <div className='tour-book'>
-                                                    <h3>{item.Price}</h3>
-                                                    <Link to={`SingleTour/${item._id}`}> <button
-                                                     
+                                                    <h3 style={{opacity: '.6'}}>$ {item.Price}</h3>
+                                                    <Link to={`SingleTour/${item._id}`} > <button
+                                                     className='booknow-button'
                                                         >Book Now</button></Link>
                                                 </div>
                                             </div>

@@ -6,12 +6,10 @@ import { useEffect } from 'react';
 import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function Users() {
     const [users, setUsers] = useState([]);
-    const Navigate = useNavigate();
     
     console.log(users)
     useEffect(()=>{
@@ -52,10 +50,10 @@ function Users() {
           }).then((response) => {
             toast.success("Item deleted successfully")
             console.log(response, "Response")
-            Navigate('Dashboard/Users/Editusers')
           }).catch((error) => {
             toast.error(error.response.data.message)
             console.log(error, "Error")
+            toast.error('Delete failed')
           })
         }
       }

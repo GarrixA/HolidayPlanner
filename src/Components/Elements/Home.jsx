@@ -6,6 +6,7 @@ import image12 from '../../images/banner-slide-3.jpg';
 import About from './About';
 import ContactUs from './ContactUs';
 import TourList from './TourList';
+import './styles/Home.css';
 
 function Home() {
     const slides = [

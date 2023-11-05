@@ -10,11 +10,12 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 function Edit() {
     const Navigate = useNavigate();
     const params = useParams();
+    const [isLoading, setIsLoading] = useState();
 
     let tourId = params.id;
 
     const [destination, setDestination] = useState('');
-    const [duration, setDuration] = useState('');
+    const [Duration, setDuration] = useState('');
     const [GroupSize, setGroupsize] = useState('')
     const [image, setImage] = useState('');
     const [price, setPrice] = useState('');
@@ -48,12 +49,13 @@ function Edit() {
         setImage(e.target.files[0]);
       };
       const handleEdit = (e) => {
+        setIsLoading(true);
         e.preventDefault();
         let token = localStorage.getItem("token");
         const formData = new FormData();
         formData.append("backdropImage", image);
         formData.append("destination", destination);
-        formData.append("duration", duration);
+        formData.append("duration", Duration);
         formData.append("GroupSize", GroupSize);
         formData.append("Price", price);
 
@@ -67,6 +69,7 @@ function Edit() {
           },
         })
           .then((response) => {
+            setIsLoading(false)
             console.log(response);
             toast.success(response.data.message);
             setTimeout(() => {
@@ -76,16 +79,17 @@ function Edit() {
           .catch((error) => {
             console.log(error);
             toast.error(error.message);
+            setIsLoading(false)
           });
       };
 
     return (
         <>
         <ToastContainer/>
-                <div className="edit">
-                <div className="edit-contents">
-                    <h1>Let's update some</h1>
+                <div className="edit-tour">
+
                    <form>
+                   <h1>Let's update some</h1>
                     <label>Tour Image</label>
                     <input name='image' type="File" 
                         onChange={(e) => handleImage(e)}
@@ -99,7 +103,7 @@ function Edit() {
                     />
                     <label>Duration</label>
                     <input type="text" placeholder='eg: 12 weeks'
-                        value={duration} 
+                        value={Duration} 
                         onChange={(e) => {
                           setDuration(e.target.value);
                         }}
@@ -118,11 +122,11 @@ function Edit() {
                           setPrice(e.target.value);
                         }}
                     />
-                    <button className='sub-button' onClick={handleEdit}>Update</button>
+                    <button className='sub-button' onClick={handleEdit}>
+                      {isLoading? "Updating...": "Update"}
+                    </button>
                    </form>
                 </div>
-                
-            </div>
         </>
     )
 }

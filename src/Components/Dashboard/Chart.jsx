@@ -1,4 +1,5 @@
 import React from 'react';
+import './chart.css';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -22,6 +23,7 @@ import Cards from './Components/Cards';
 
 function Chart() {
     const options = {
+      maintainAspectRatio: false,
         responsive: true,
         plugins: {
           legend: {
@@ -58,16 +60,13 @@ function Chart() {
       };
   return (
   <>
-      <div className='main- chart'>
+      <div className='main-chart'>
         <div className="cards">
           <Cards/>
         </div>
         <div className="chart">
           <Bar options={options} data={data}
-            style={{
-              width: '400px',
-              height: '60px',
-            }}
+            className='chart'
           />
           </div>
       </div>
