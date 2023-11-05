@@ -53,12 +53,28 @@
 
 }
 
+.contacts-body form .fullname{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullname .fname{
+    color: #c29d59;
+    font-weight: 900;
+    font-size: 1.4rem;
+    position: relative;
+    left: 30px;
+}
+
 .contacts-body form input{
     height: 2vh;
-    width: 40%;
-    /* border: 2px solid #c29d59; */
+    border: 2px solid #c29d59;
     border-radius: 4px;
-    padding: 8px;
+    padding: 8px 12px 12px 35px;
+    
 }
 
 .contacts-body form textarea{
@@ -250,9 +266,9 @@
     }
     .contacts-body form {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
-        width: 45%;
+        width: 80%;
         gap: 16px;
         background-color: #fff;
         height: 40vh;
@@ -261,15 +277,27 @@
         padding: 50px;
         position: relative;
         bottom: -40px;
-        left: 10%;
+        left: 0%;
         border-radius: 8px;
+    }
+
+    .contacts-body form .fullname{
+        /* background-color: red; */
+        width: 90%;
+        display: flex;
+        align-items: center;
     }
     .contacts-body form input {
         height: 2vh;
         width: 100%;
         border-radius: 4px;
-        padding: 8px;
+        padding: 12px 12px 12px 30px;
     }
+    .fullname .fname{
+        left: 25px;
+        font-size: 1.6rem;
+    }
+
     .contacts-questions {
         display: flex;
         flex-direction: column;

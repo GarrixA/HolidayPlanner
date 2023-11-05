@@ -9,6 +9,11 @@ import {BsFillClockFill} from 'react-icons/bs';
 import {FaUserGroup} from 'react-icons/fa6';
 import {BsFillPersonPlusFill} from 'react-icons/bs';
 import {FaSun} from 'react-icons/fa6';
+import {IoPersonSharp} from 'react-icons/io5';
+import {GrMail} from 'react-icons/gr';
+import {AiTwotonePhone} from 'react-icons/ai';
+import {FaCalendarDays} from 'react-icons/fa6';
+import {BsPersonLinesFill} from 'react-icons/bs';
 import video from '../../images/video.mp4';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -169,37 +174,57 @@ function SingleTour() {
               <h1 style={{color: 'black'}} >BOOK THIS TOUR</h1>
                 <div className="inputs">
                 
-                <input type="text" placeholder='fullname' required
-                  onChange={(e) =>{
-                    e.preventDefault();
-                    setBookFormName(e.target.value);
-                  }}
-                />
-                <input type="text" placeholder='email' required
-                  onChange={(e) =>{
-                    e.preventDefault();
-                    setBookFormEmail(e.target.value);
-                  }}
-                />
-                <input type="text" placeholder='confirm email' required/>
-                <input type="text" placeholder='phone'
-                  onChange={(e) =>{
-                    e.preventDefault();
-                    setBookFormPhone(e.target.value);
-                  }}
-                />
-                <input type="date" 
-                  onChange={(e) =>{
-                    e.preventDefault();
-                    setBookFormDate(e.target.value);
-                  }}
-                />
-                <input type="number" placeholder='number of tickets'
-                  onChange={(e) =>{
-                    e.preventDefault();
-                    setBookFormTicketsNumber(parseInt(e.target.value));
-                  }}
-                />
+                <div className="stour">
+                  <IoPersonSharp className='stour-icon'/>
+                  <input type="text" placeholder='fullname' required
+                    onChange={(e) =>{
+                      e.preventDefault();
+                      setBookFormName(e.target.value);
+                    }}
+                  />
+                </div>
+
+                <div className="stour">
+                  <GrMail className='stour-icon'/>
+                  <input type="text" placeholder='email' required
+                    onChange={(e) =>{
+                      e.preventDefault();
+                      setBookFormEmail(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="stour">
+                  <GrMail className='stour-icon'/>
+                  <input type="text" placeholder='confirm email' required/>
+                </div>
+
+                <div className="stour">
+                  <AiTwotonePhone className='stour-icon'/>
+                  <input type="text" placeholder='phone'
+                    onChange={(e) =>{
+                      e.preventDefault();
+                      setBookFormPhone(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="stour">
+                  <FaCalendarDays className='stour-icon'/>
+                  <input type="date" 
+                    onChange={(e) =>{
+                      e.preventDefault();
+                      setBookFormDate(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="stour">
+                  <BsPersonLinesFill className='stour-icon'/>
+                  <input type="number" placeholder='number of tickets'
+                    onChange={(e) =>{
+                      e.preventDefault();
+                      setBookFormTicketsNumber(parseInt(e.target.value));
+                    }}
+                  />
+                </div>
                 <textarea type="text" placeholder='message' style={{width: '84%', height: '6rem'}}></textarea>
                 <div className="box" style={{display: 'flex'}}>
                   <input type="checkbox" style={{width: '70px', marginLeft: '1.5rem'}}/>

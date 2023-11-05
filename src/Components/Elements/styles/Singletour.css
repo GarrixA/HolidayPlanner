@@ -177,6 +177,21 @@
     padding-bottom: 10.8rem;
 }
 
+.stour{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stour .stour-icon{
+    font-size: 2.4rem;
+    color: #c29d59;
+    position: relative;
+    left: 63px;
+    top: 3px;
+}
+
 .inputs{
     display: flex;
     flex-direction: column;
@@ -188,16 +203,17 @@
 }
 
 .inputs input{
+    margin-right: 2rem;
     height: 2rem;
-    width: 80%;
+    width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 4px;
-    padding: 8px;
+    padding: 8px 12px 12px 38px;
     font-size: 1.4rem;
 }
 
 .inputs .box textarea{
-    width: 100%;
+    width: 80%;
 }
 
 .box{
@@ -283,15 +299,22 @@ label{
         flex-direction: column;
         align-items: center;
     }
+
     .inputs input {
         height: 2rem;
-        width: 80%;
+        width: 68%;
         border: 1px solid rgba(0, 0, 0, 0.5);
         border-radius: 4px;
-        padding: 8px 8px;
+        padding: 8px 12px 12px 45px;
         font-size: 1.4rem;
-        margin: 12px 0 0 0;
+        margin: 12px 0px 0px 0px;
     }
+
+    .stour .stour-icon{
+        left: 43px;
+        font-size: 2rem;
+    }
+
     .inform .sides {
         width: 0%;
         padding-right: 70px;

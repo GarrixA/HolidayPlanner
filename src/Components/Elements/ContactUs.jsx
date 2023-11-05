@@ -3,10 +3,13 @@ import './styles/Contacts.css';
 import {IoIosArrowForward} from 'react-icons/io';
 import {BsTelephoneFill} from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
-import {MdLocationOn} from 'react-icons/md'
-import {MdAlternateEmail} from 'react-icons/md'
-import {IoPinOutline} from 'react-icons/io5'
-import {BsFillTelephoneFill} from 'react-icons/bs'
+import {MdLocationOn} from 'react-icons/md';
+import {MdAlternateEmail} from 'react-icons/md';
+import {IoPinOutline} from 'react-icons/io5';
+import {BsFillTelephoneFill} from 'react-icons/bs';
+import {FaBook} from 'react-icons/fa';
+import {IoPerson} from 'react-icons/io5';
+import {AiTwotonePhone} from 'react-icons/ai';
 import address from '../Arrays/Address';
 
 function ContactUs() {
@@ -20,11 +23,28 @@ function ContactUs() {
             <div className="contacts-body">
 
                 <form>
+                    <div className="fullname">
+                        <IoPerson className='fname'/>
                     <input type="text" placeholder='Fullname*'/>
+                    </div>
+
+                    <div className="fullname">
+                        <MdEmail className='fname'/>
                     <input type="text" placeholder='Email*'/>
+                    </div>
+
+                    <div className="fullname">
+                        <AiTwotonePhone className='fname'/>
                     <input type="text" placeholder='Phone*'/>
+                    </div>
+
+                    <div className="fullname">
+                        <FaBook className='fname'/>
                     <input type="text" placeholder='Services*'/>
+                    </div>
+
                     <textarea type="text" placeholder='Message'></textarea>
+
                     <div className='form-btn'>
                         <button type='submit'>Submit</button>
                     </div>
