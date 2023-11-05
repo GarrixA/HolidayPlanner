@@ -116,7 +116,7 @@
 
 /* inputs */
 .inputs input{
-    width: 75%;
+    width: 70%;
     height: 4vh;
     border-radius: 4px;
     border: 1px solid #000;
@@ -128,10 +128,10 @@
 
 /* p looks like inputs that holds icons */
 .inputs p{
-    width: 80%;
+    width: 85%;
     height: 5.5vh;
     margin-top: 12px;
-    margin-left: 28px;
+    margin-left: 1px;
     padding: 4px;
     border-radius: 4px;
     display: flex;
