@@ -162,12 +162,10 @@
         height: 45vh;
         bottom: 100px;
         justify-content: space-evenly;
-        bottom: -140px;
     }
     .about-contents{
         display: flex;
         flex-direction: column;
-        margin-top: 12rem;
     }
     .about-images{
         width: 50%;

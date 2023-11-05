@@ -192,3 +192,29 @@
     opacity: .8;
 }
   /* responsive */
+
+
+@media (max-width: 414px){
+  .signin-background {
+    align-items: start;
+    justify-content: center;
+  }
+  .signin-wrapper {
+    margin-top: 7rem;
+    width: 80%;
+    background-color: #ffffff;
+  }
+  .signin-image > img {
+    display: none;
+  }
+
+  .signin-account h5{
+    font-size: .8rem;
+  }
+  .signin-account{
+    gap: 12px;
+  }
+  .orlo p{
+    font-size: .75rem;
+  }
+}
