@@ -269,7 +269,6 @@
         flex-direction: column;
         flex-wrap: wrap;
         width: 70%;
-        background-color: red;
         gap: 16px;
         background-color: #fff;
         height: 40vh;
@@ -297,6 +296,7 @@
     .fullname .fname{
         left: 25px;
         font-size: 1.6rem;
+        color: #c29d59;
     }
 
     .contacts-questions {
