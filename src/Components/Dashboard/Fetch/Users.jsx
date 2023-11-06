@@ -48,11 +48,11 @@ function Users() {
               Authorization: `Bearer ${token}`
             },
           }).then((response) => {
-            toast.success("Item deleted successfully")
+            toast.success("Umu user mubishanga")
             console.log(response, "Response")
           }).catch((error) => {
             toast.error(error.response.data.message)
-            console.log(error, "Error")
+            // console.log(error, "Error")
             toast.error('Delete failed')
           })
         }
