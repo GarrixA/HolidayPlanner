@@ -156,8 +156,12 @@
     opacity: .3;
 }
 
-.dash-button{
+.top-body svg{
     display: none;
+}
+.dash-button {
+    display: none;
+    color: #c29d59;
 }
 .m-overlay .left-dash{
     display: none;
@@ -177,6 +181,10 @@
     .dash-button{
         display: inline;
         height: 3vh;
+    }
+
+    .top-body svg{
+        display: block;
     }
 
     .m-overlay{

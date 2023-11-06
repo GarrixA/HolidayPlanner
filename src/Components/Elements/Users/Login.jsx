@@ -31,10 +31,13 @@ function Login() {
             setTimeout(() =>{
                 if(Response.data.user.role == "admin"){
                     console.log(Response);
-                    toast.success("login success");
+                    alert("Welcome back admin :)")
                     Navigate("/dashboard");
                  } else {
-                   Navigate("/")
+                    toast.success(Response.data.message)
+                    toast.success("you can now book a tour :)")
+                    alert('Logi successfully')
+                    Navigate("/")
                  }
             }, 3000);
         })
