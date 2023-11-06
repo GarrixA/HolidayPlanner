@@ -27,11 +27,15 @@ function Login() {
         })
         .then((Response) =>{
             localStorage.setItem('token', Response.data.access_token);
-
+            setIsLoading(false)
             setTimeout(() =>{
-                setIsLoading(false)
-                toast.success('Login seccessfully');
-                Navigate("/Dashboard")
+                if(Response.data.user.role == "admin"){
+                    console.log(Response);
+                    toast.success("login success");
+                    Navigate("/dashboard");
+                 } else {
+                   Navigate("/")
+                 }
             }, 3000);
         })
         .catch((error) =>{
