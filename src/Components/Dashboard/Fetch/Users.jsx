@@ -42,7 +42,7 @@ function Users() {
         if (window.confirm("Are you sure you want to delete?")) {
           let token = localStorage.getItem("token")
           axios({
-            url: `https://holiday-planner-4lnj.onrender.com/api/v1/users/auth/delete${id}`,
+            url: `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/delete/${id}`,
             method: "DELETE",
             headers: {
               Authorization: `Bearer ${token}`
