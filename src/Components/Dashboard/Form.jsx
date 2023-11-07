@@ -13,6 +13,7 @@ function Form() {
     const [Duration, setDuration] = useState("");
     const [image, setImage] = useState("");
     const [GroupSize, setGroupsize] = useState("");
+    const [tourID, setTourID] = useState("");
     const handleImage = (e) => {
         e.preventDefault();
         console.log(e.target.files, "file");
@@ -24,6 +25,7 @@ function Form() {
     formData.append("destination", destination);
     formData.append("GroupSize", GroupSize);
     formData.append("Price", price);
+    formData.append("tourID", tourID);
     const handleForm = (e) => {
       setIsLoading(true);
       e.preventDefault();
@@ -37,7 +39,6 @@ function Form() {
       })
       .then((response) => {
         console.log(response);
-        // toast.success(response.data.message);
         toast.success("Tour added successfully")
         setIsLoading(false);
         setTimeout(() => {
@@ -46,7 +47,6 @@ function Form() {
       })
       .catch((error) => {
         console.log(error);
-        // toast.error(error.message);
         toast.error("please fill the empty fields")
         setIsLoading(false);
       });
@@ -95,6 +95,14 @@ function Form() {
                     <label>Price</label>
                     <input type="number"  placeholder='price is in $ '
                         value={price} 
+                        onChange={(e) => {
+                          setPrice(e.target.value);
+                        }}
+                    />
+
+                    <label>Tour Id</label>
+                    <input type="number"  placeholder='price is in $ '
+                        value={tourID} 
                         onChange={(e) => {
                           setPrice(e.target.value);
                         }}

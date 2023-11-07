@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 import {GiMoon} from 'react-icons/gi';
 import image2 from '../../images/logo-s.png';
@@ -8,17 +8,33 @@ import { FaCalendarCheck } from 'react-icons/fa6';
 import { FaPlaneDeparture } from 'react-icons/fa';
 import {RxDashboard} from 'react-icons/rx';
 import {LuLogOut} from 'react-icons/lu';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import imag1 from '../../images/prof.png';
 import { Outlet } from 'react-router-dom';
 import {FiMenu} from 'react-icons/fi';
 import Left from './Left';
 
 function Dashbord() {
+    const navigate = useNavigate();
+    const token = localStorage.getItem("token");
+    const userString = localStorage.getItem("user");
+    const user = JSON.parse(userString);
+
     const [openModal, setOpenModal] = useState(false);
     const toggleModal = () =>{
         setOpenModal(!openModal);
     }
+
+    useEffect(() =>{
+        console.log(user);
+        console.log(token);
+        if (token && user.role == "user"){
+            navigate("/")
+        }else if (!token){
+            navigate("/Login")
+        }
+    }, []);
+
     return (
         <>
         <div className='dashboard'>

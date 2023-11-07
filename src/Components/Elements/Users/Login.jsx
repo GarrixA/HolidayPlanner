@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
+    
     const Navigate = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -26,13 +27,21 @@ function Login() {
             },
         })
         .then((Response) =>{
-            localStorage.setItem('token', Response.data.access_token);
+            console.log(Response)
             setIsLoading(false)
+            localStorage.setItem("user", JSON.stringify(Response.data.user));
+            const user = localStorage.getItem("user");
+            localStorage.setItem("token", Response.data.access_token);
+            const token = localStorage.getItem("token");
+
+            console.log(token);
+            console.log(user);
+
             setTimeout(() =>{
                 if(Response.data.user.role == "admin"){
-                    console.log(Response);
+                    console.log(token);
                     alert("Welcome back admin :)")
-                    Navigate("/dashboard");
+                    Navigate("/Dashboard");
                  } else {
                     toast.success(Response.data.message)
                     toast.success("you can now book a tour :)")
