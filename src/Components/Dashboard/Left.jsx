@@ -13,9 +13,8 @@ function Left() {
   return (
     <>
         <div className="left-dash">
-                <span className='back'><MdOutlineArrowBackIosNew/><Link to={'/'}> Back </Link></span>  
                 <div className="dash-image">
-                    <img src={image2} alt="img" />
+                    <Link to={"/"}> <img src={image2} alt="img" /></Link>
                 </div>
                 <div className="main-menu">
                     <h1>MAIN MENU</h1>

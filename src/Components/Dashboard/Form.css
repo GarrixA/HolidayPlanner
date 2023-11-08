@@ -11,30 +11,48 @@
 }
 
 .modal-contents{
-    width: 50%;
-    height: 85%;
+    width: 60%;
+    /* height: 50%; */
     display: flex;
     padding-bottom: 2.4rem;
     flex-direction: column;
     align-items: center;
-    background-color: hsl(0, 0%, 100%);
+    background-color: #fff;
     border-radius: 8px;
-    padding-bottom: 4rem;
+    /* padding-bottom: 4rem; */
     margin-top: 2rem;
 }
 .modal-contents form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+form .wraping{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    margin: 5px;
+    width: 40%;
 }
+
 .modal-contents h1{
-    margin: 1.4rem;
+    margin: .5rem;
+    width: 100%;
+    text-align: center;
+}
+
+form .labels{
+    font-size: 1rem;
 }
 
 .modal-contents form input{
-    padding: 12px;
+    padding: 0px 0px 12px 12px;
     border: 1px solid #c29d59;
     border-radius: 4px;
+    padding: 8px;
 }
 
 /* close button */

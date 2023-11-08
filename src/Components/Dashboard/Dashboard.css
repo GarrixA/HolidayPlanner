@@ -54,8 +54,8 @@
 
 /* dashboard logo image upper dashboard text */
 .dash-profile img{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 .dash-icon{
@@ -222,7 +222,7 @@
         display: inline;
     }
     .right-dash{
-        height: 100vh;
+        height: 114vh;
         width: 414px;
     }
     .dash-profile img{

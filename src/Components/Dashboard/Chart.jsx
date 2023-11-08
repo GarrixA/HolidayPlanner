@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Chart.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -11,6 +13,7 @@ import {
   } from 'chart.js';
   import { Bar } from 'react-chartjs-2';
 import Cards from './Components/Cards';
+import axios from 'axios';
   
   ChartJS.register(
     CategoryScale,
@@ -22,8 +25,29 @@ import Cards from './Components/Cards';
   );
 
 function Chart() {
+
+  const [charts, setCharts] = useState([]);
+    const fetchChart = () =>{
+    axios({
+      method: "GET",
+      url:"https://holiday-planner-4lnj.onrender.com/api/v1/count?year=2023",
+      headers: {
+        "Content-Type": "Application/json"
+      }
+    })
+    .then((response) =>{
+      console.log(response)
+      setCharts(response.data)
+      console.log(charts,"charts");
+    })
+    console.log(
+    charts.map((item) => item.count),"charts")
+  };
+
+  useEffect(() =>{
+    fetchChart();
+  }, []);
     const options = {
-      maintainAspectRatio: false,
         responsive: true,
         plugins: {
           legend: {
@@ -36,30 +60,34 @@ function Chart() {
         },
       };
       
-      const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+      const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September', 'October', 'November', 'December'];
       
     const data = {
         labels,
         datasets: [
           {
             label: 'Tours',
-            data: ['40', '20', '39', '60', '10', '5', '15'],
+            data: charts.map((item) => item.count),
             backgroundColor: '#c29d59',
           },
           {
             label: 'Bookings',
-            data: ['70', '40', '59', '10', '28', '35', '19'],
+            data: [],
             backgroundColor: 'skyblue',
           },
           {
             label: 'Users',
-            data: ['120', '60', '39', '40', '30', '55', '15'],
+            data: [],
             backgroundColor: 'orange',
           }
         ],
       };
+
+     
+        
   return (
   <>
+      <ToastContainer/>
       <div className='main-chart'>
         <div className="cards">
           <Cards/>

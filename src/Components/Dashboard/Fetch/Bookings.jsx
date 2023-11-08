@@ -70,7 +70,6 @@ function Bookings() {
                             <th>Email</th>
                             <th>Phone number</th>
                             <th>Date</th>
-                            <th>Number of tickets</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -82,7 +81,6 @@ function Bookings() {
                                     <td>{item.email}</td>
                                     <td>{item.phone}</td>
                                     <td>{item.date}</td>
-                                    <td>{item.Ticket}</td>
                                     <td >
                                     <span className='actions'>
                                         <BsFillTrashFill onClick={() => handleDelete(item._id)} className='delete-btn'/>

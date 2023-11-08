@@ -34,9 +34,6 @@ function Login() {
             localStorage.setItem("token", Response.data.access_token);
             const token = localStorage.getItem("token");
 
-            console.log(token);
-            console.log(user);
-
             setTimeout(() =>{
                 if(Response.data.user.role == "admin"){
                     console.log(token);

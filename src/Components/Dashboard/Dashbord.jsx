@@ -29,9 +29,9 @@ function Dashbord() {
         console.log(user);
         console.log(token);
         if (token && user.role == "user"){
-            navigate("/")
+            navigate("/");
         }else if (!token){
-            navigate("/Login")
+            navigate("/Login");
         }
     }, []);
 

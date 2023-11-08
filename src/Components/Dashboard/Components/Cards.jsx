@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cards.css';
-import image from '../../../images/zebra.png';
+import image from '../../../images/Zebraz.jpg';
 const cards = [
     {
         image: image,
@@ -23,14 +23,14 @@ function Cards() {
         {
             cards.map((item, idx) =>{
                 return <div className="cards-wrapp">
-                    <div className="cards-image">
-                        <img src={item.image} alt="img" />
-                    </div>
-                    <div className="cards-details">
-                        <h1>{item.title}</h1>
-                        <p>{item.quant}</p>
-                    </div>
-                </div>
+                            <div className="cards-image">
+                                <img src={item.image} alt="img" />
+                            </div>
+                            <div className="cards-details">
+                                <h1>{item.title}</h1>
+                                <p>{item.quant}</p>
+                            </div>
+                        </div>
             })
         }
       
