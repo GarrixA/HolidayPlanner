@@ -83,7 +83,7 @@ function Tours() {
                                     <td>{t.destination}</td>
                                     <td>{t.Duration}</td>
                                     <td>{t.GroupSize}</td>
-                                    <td style={{opacity: '.6'}}>$ {t.Price}</td>
+                                    <td style={{color: 'grey'}}>$ {t.Price}</td>
                                     <td>
                                     <span className='actions'>
                                         <BsFillTrashFill onClick={() => handleDelete(t._id)} className='delete-btn'/>

@@ -85,7 +85,7 @@ function Form() {
                 <button onClick={toggleModal} className='close-modal'>X</button>
                     
                    <form>
-                   <h1>Add your future tour</h1>
+                   <h1>Create a future tour</h1>
                       <div className="wraping">
                           <label className='labels'>Tour Image</label>
                           <input name='image' type="File" 
