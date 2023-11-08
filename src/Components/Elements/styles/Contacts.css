@@ -266,7 +266,6 @@
     }
     .contacts-body form {
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
         width: 70%;
         gap: 16px;
