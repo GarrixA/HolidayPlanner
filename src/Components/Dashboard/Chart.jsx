@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Chart.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PuffLoader }  from 'react-spinners';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -26,8 +27,11 @@ import axios from 'axios';
 
 function Chart() {
 
+  const [load, setLoad] = useState(false);
+
   const [charts, setCharts] = useState([]);
     const fetchChart = () =>{
+      setLoad(true)
     axios({
       method: "GET",
       url:"https://holiday-planner-4lnj.onrender.com/api/v1/count?year=2023",
@@ -37,8 +41,11 @@ function Chart() {
     })
     .then((response) =>{
       console.log(response)
-      setCharts(response.data)
       console.log(charts,"charts");
+      setTimeout(()=>{
+        setCharts(response.data)
+        setLoad(false)
+      }, 5000)
     })
     console.log(
     charts.map((item) => item.count),"charts")
@@ -87,16 +94,29 @@ function Chart() {
         
   return (
   <>
+  <div className="conts">
+  
       <ToastContainer/>
       <div className='main-chart'>
-        <div className="cards">
-          <Cards/>
-        </div>
-        <div className="chart">
-          <Bar options={options} data={data}
-            className='chart'
-          />
+        {load? <PuffLoader
+  color="#36d7b7"
+  size={150}
+  className='barspiner'
+/> :
+        <div className="divc">
+          <div className="cards">
+            <Cards/>
           </div>
+          <div className="chart">
+        
+            <Bar options={options} data={data}
+              className='chart'
+            />
+            </div>
+        </div>
+        }
+      </div>
+      
       </div>
     </>
   )

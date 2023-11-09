@@ -8,9 +8,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
+import { PuffLoader }  from 'react-spinners';
 
 function Tours() {
     const [tours, setTours] = useState([]);
+
+    const [load, setLoad] = useState(false);
 
     const [bookPageNumber, setBookPageNumber] = useState(0);
     const booksPerPage = 5;
@@ -43,6 +46,7 @@ function Tours() {
     console.log(tours)
     useEffect(()=>{
         const fetctTour = ()=>{
+            setLoad(true)
             axios({
                 method: 'GET',
                 url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour",
@@ -53,7 +57,10 @@ function Tours() {
             .then((response) =>{
                 console.log(response);
                 setTours(response.data);
-
+                setTimeout(()=>{
+                    setLoad(false)
+                    setTours(response.data);
+                }, 3000)
             })
             .catch((error) =>{
                 console.log(error);
@@ -90,6 +97,12 @@ function Tours() {
         <> 
             <Form/> 
             <div className="table-wrapper">
+                {load ? <PuffLoader
+  color="#36d7b7"
+  size={150}
+  className='barspiner'
+/> :
+            <div className="dvx">
                 <h1>Tours</h1>
             <div className="table">
                 <ToastContainer/>
@@ -126,6 +139,8 @@ function Tours() {
                 pageLinkClassName={'pageClass'}
                 activeClassName={'activeClass'}
               />
+              </div>
+              }
             </div>
         
         </>

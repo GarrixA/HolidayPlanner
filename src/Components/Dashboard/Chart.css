@@ -4,6 +4,9 @@
     height: 60vh;
 }
 
+.barspiner{
+    margin: 20rem 20rem 20rem 30rem;
+}
 
 @media (max-width: 414px){
     .main-chart{

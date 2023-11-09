@@ -7,8 +7,11 @@ import {TfiFacebook} from 'react-icons/tfi';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PuffLoader }  from 'react-spinners';
 
 function Login() {
+
+    const [load, setLoad] = useState(false);
     
     const Navigate = useNavigate()
     const [email, setEmail] = useState('');
@@ -16,6 +19,7 @@ function Login() {
     const [isLoading, setIsLoading] = useState(false);
 
     const handleLogin = (e) =>{
+        setLoad(true)
         e.preventDefault();
         setIsLoading(true);
         axios({
@@ -27,6 +31,7 @@ function Login() {
             },
         })
         .then((Response) =>{
+            setLoad(true)
             console.log(Response)
             setIsLoading(false)
             localStorage.setItem("user", JSON.stringify(Response.data.user));
@@ -41,8 +46,8 @@ function Login() {
                     Navigate("/Dashboard");
                  } else {
                     toast.success(Response.data.message)
+                    alert('Login successfully')
                     toast.success("you can now book a tour :)")
-                    alert('Logi successfully')
                     Navigate("/")
                  }
             }, 3000);
@@ -57,6 +62,7 @@ function Login() {
     <div className='signin-container'>
         <ToastContainer/>
         <div className="signin-background">
+            {load ? <PuffLoader color="#36d7b7" size={150} /> : 
             <div className="signin-wrapper">
                 <div className="signin-tittle">
                     <h1>Login</h1>
@@ -103,6 +109,7 @@ function Login() {
                     <button className='facebook'><TfiFacebook/> Facebook</button>
                 </div>
             </div>
+            }
             <div className="signin-image">
                 <img src={image1} alt="img" />
             </div>

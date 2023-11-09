@@ -9,9 +9,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import './Bookings.css';
+import { PuffLoader }  from 'react-spinners';
 
 function Bookings() {
     const [bookings, setBookings] = useState([]);
+    const [load, setLoad] = useState(false)
 
     const [bookPageNumber, setBookPageNumber] = useState(0);
     const booksPerPage = 8;
@@ -46,6 +48,7 @@ function Bookings() {
     console.log(bookPageNumber, "bpn")
 
     const fetchBookings = () =>{
+      setLoad(true)
     let token = localStorage.getItem("token");
     console.log(token);
     axios({
@@ -57,7 +60,11 @@ function Bookings() {
     })
     .then((response) => {
         console.log(response.data);
-        setBookings(response.data);
+
+        setTimeout(()=>{
+          setBookings(response.data);
+          setLoad(false)
+        }, 3000)
       })
       .catch((error) => {
         console.log(error);
@@ -94,6 +101,12 @@ function Bookings() {
 
   return (
     <div className="table-wrapper">
+      {load ? <PuffLoader
+  color="#36d7b7"
+  size={150}
+  className='barspiner'
+/>: 
+      <div className="bookr">
                 <h1>Bookings</h1>
             <div className="table">
                 <ToastContainer/>
@@ -125,7 +138,9 @@ function Bookings() {
                 pageLinkClassName={'pageClass'}
                 activeClassName={'activeClass'}
               />
-            </div>
+              </div>
+              }
+          </div>
   )
 }
 

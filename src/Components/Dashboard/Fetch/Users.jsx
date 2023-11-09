@@ -8,10 +8,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
+import { PuffLoader }  from 'react-spinners';
 
 function Users() {
 
     const [users, setUsers] = useState([]);
+
+    const [load, setLoad] = useState(false);
 
     const [bookPageNumber, setBookPageNumber] = useState(0);
     const booksPerPage = 8;
@@ -45,6 +48,7 @@ function Users() {
     console.log(users)
     useEffect(()=>{
         const fettchUsers = ()=>{
+            setLoad(true)
             axios({
                 method: 'GET',
                 url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/users",
@@ -57,6 +61,7 @@ function Users() {
                 setUsers(response.data);
                 setTimeout(() => {
                     window.location.reload
+                    setLoad(false)
                 }, 3000);
             })
             .catch((error) =>{
@@ -90,6 +95,12 @@ function Users() {
       }
   return (
     <div className="table-wrapper">
+        {load ? <PuffLoader
+  color="#36d7b7"
+  size={150}
+  className='barspiner'
+/> : 
+        <div className="dvx">
                 <h1>Users</h1>
             <div className="table">
 
@@ -128,6 +139,8 @@ function Users() {
                 pageLinkClassName={'pageClass'}
                 activeClassName={'activeClass'}
               />
+              </div>
+              }
             </div>
   )
 }

@@ -13,8 +13,10 @@ import imag1 from '../../images/prof.png';
 import { Outlet } from 'react-router-dom';
 import {FiMenu} from 'react-icons/fi';
 import Left from './Left';
+import { PuffLoader }  from 'react-spinners';
 
 function Dashbord() {
+    const [load, setLoad] = useState(false);
     const navigate = useNavigate();
     const token = localStorage.getItem("token");
     const userString = localStorage.getItem("user");

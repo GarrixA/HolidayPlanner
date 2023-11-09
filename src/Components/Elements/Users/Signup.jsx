@@ -5,8 +5,12 @@ import { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { PuffLoader } from 'react-spinners';
 
 function SidgnUp() {
+
+    const [load, setLoad] = useState(false);
+
     const Navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -33,6 +37,7 @@ function SidgnUp() {
             }
         })
         .then((response) =>{
+            setLoad(true)
             console.log(response, "response");
             localStorage.setItem("token", response.data.access_token);
             alert("Thanks for signing up! :)");
@@ -42,6 +47,7 @@ function SidgnUp() {
                 Navigate("/Login")
             }, 3000);
         })
+        
 
         .catch((error) =>{
             console.log(error);
@@ -54,8 +60,10 @@ function SidgnUp() {
     
     <div className='signup-container'>
         <ToastContainer/>
+        
         <div className="signup-background">
-            <div className="signup-wrapper">
+            {load ? <PuffLoader color="#36d7b7" size={150} />: 
+                <div className="signup-wrapper">
                 <div className="signup-tittle">
                     <h1>Sign Up</h1>
                 </div>
@@ -111,12 +119,14 @@ function SidgnUp() {
                         color: '#c29d59'
                     }}> Sign in</a></h5>
                 </div>
-            </div>
+                </div>
+            }
             <div className="signup-image">
                 <img src={image1} alt="img" />
             </div>
         </div>
     </div>
+
   )
 }
 
