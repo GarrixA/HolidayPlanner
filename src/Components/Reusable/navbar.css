@@ -116,7 +116,7 @@
     width: 90%;
     margin-left: 5%;
     position: fixed;
-    top: 63px;
+    top: 50px;
     z-index: 1;
     box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.099);
 }
@@ -295,6 +295,8 @@
 }
 .menu-links span a:hover{
     color: #c29d59;
+    text-decoration: line-through;
+    transition: .4s ease-in;
 }
 
 .menu-socials{

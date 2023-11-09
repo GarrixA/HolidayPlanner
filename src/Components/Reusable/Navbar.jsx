@@ -67,8 +67,6 @@ function Navbar( ) {
                                 <span><Link to={'About'} onClick={toggleModal}>About</Link></span>
                                 <span><Link to={'ContactUs'} onClick={toggleModal}>Contact us</Link></span>
                                 <span><Link to={'TourList'} onClick={toggleModal}>Tour list</Link></span>
-                                {/* <span><Link to={'AmazingTours'} onClick={toggleModal}>Amazing tours</Link></span> */}
-                                <span><Link to={'/Dashboard'}>Dashboard</Link></span>
                                 <span><Link to={'Login'} onClick={toggleModal}>Login</Link></span>
                                 <span><Link to={'Signup'} onClick={toggleModal}>Signup</Link></span>
                             </div>

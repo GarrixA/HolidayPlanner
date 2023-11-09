@@ -117,6 +117,7 @@
 /* inputs */
 .inputs input{
     width: 70%;
+    width: 30%;
     height: 4vh;
     border-radius: 4px;
     border: 1px solid #000;
@@ -206,6 +207,7 @@
     padding: 18px 0px 10px 0px;
     font-size: 1.3rem;
     color: #fff;
+    cursor: pointer;
 }
 
 /* the tourlist cards and form */
@@ -307,6 +309,7 @@
 
 .booknow-button{
     width: 100px;
+    cursor: pointer;
 }
 
 /* responsive */

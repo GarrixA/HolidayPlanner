@@ -1,0 +1,78 @@
+.paginationButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px 90px 40px 90px;
+    border-radius: 8px;
+    list-style: none;
+    align-items: center;
+
+}
+
+.buttonLinks{
+    color: rgb(14, 77, 160);
+    padding: 10px;
+    border: 1px;
+    border-radius: 4px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 4rem;
+}
+
+
+.activeLink{
+    background-color: #c29d59;
+    padding: 4px 25px 4px 25px;
+    border-radius: 4px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.activeLink a{
+    list-style-type: none;
+}
+
+.pageClass{
+    border-radius: 50%;
+    padding: 20px 25px 20px 20px;
+ }
+
+ .pageClass:hover{
+    background-color: #c29d59;
+    cursor: pointer;
+ }
+
+ .activeClass{
+    background-color: #c29d59;
+    padding: 20px 1px 20px 0px;
+    border-radius: 50%;
+ }
+
+ /* responsive */
+
+ @media (max-width: 414px){
+    .paginationButtons{
+        justify-content: flex-start;
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
+    .buttonLinks{
+        color: rgb(14, 77, 160);
+        padding: 1px;
+        border: 1px;
+        border-radius: 4px;
+        font-weight: 800;
+        cursor: pointer;
+        font-size: 2rem;
+        padding: 1.2rem;
+    }
+    .pageClass{
+        border-radius: 50%;
+        padding: 5px 12px 5px 12px;
+     }.activeClass{
+        background-color: #c29d59;
+        padding: 2px 1px 2px 0px;
+        border-radius: 50%;
+     } }

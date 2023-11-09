@@ -54,8 +54,8 @@
 
 /* dashboard logo image upper dashboard text */
 .dash-profile img{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 .dash-icon{
@@ -156,8 +156,12 @@
     opacity: .3;
 }
 
-.dash-button{
+.top-body svg{
     display: none;
+}
+.dash-button {
+    display: none;
+    color: #c29d59;
 }
 .m-overlay .left-dash{
     display: none;
@@ -177,6 +181,10 @@
     .dash-button{
         display: inline;
         height: 3vh;
+    }
+
+    .top-body svg{
+        display: block;
     }
 
     .m-overlay{
@@ -214,7 +222,7 @@
         display: inline;
     }
     .right-dash{
-        height: 100vh;
+        height: 114vh;
         width: 414px;
     }
     .dash-profile img{

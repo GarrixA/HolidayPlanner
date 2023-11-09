@@ -7,9 +7,38 @@ import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
 
 function Tours() {
     const [tours, setTours] = useState([]);
+
+    const [bookPageNumber, setBookPageNumber] = useState(0);
+    const booksPerPage = 5;
+    const bookVisited = bookPageNumber * booksPerPage;
+    console.log(booksPerPage);
+    const bookingDisplay = tours
+    .slice(bookVisited, bookVisited + booksPerPage)
+    .map((t, idx) =>{
+        return <tr key={idx}>
+            <td><img className='backdrop' src={t.backdropImage} alt=""/></td>
+            <td>{t.destination}</td>
+            <td>{t.Duration}</td>
+            <td>{t.GroupSize}</td>
+            <td style={{color: 'grey'}}>$ {t.Price}</td>
+            <td>
+            <span className='actions'>
+                <BsFillTrashFill onClick={() => handleDelete(t._id)} className='delete-btn'/>
+                <Link to={`Edit/${t._id}`}><BsFillPencilFill /></Link>
+            </span>
+        </td>
+        </tr>
+    })
+
+    const handlePageChange = (selected) =>{
+        setBookPageNumber(selected?.selected)
+        console.log(selected, "selected")
+        console.log(booksPerPage, "bPP")
+      }
     
     console.log(tours)
     useEffect(()=>{
@@ -77,26 +106,26 @@ function Tours() {
                     </thead>
                     <tbody>
                         {
-                            tours.map((t, idx) =>{
-                                return <tr key={idx}>
-                                    <td><img className='backdrop' src={t.backdropImage} alt=""/></td>
-                                    <td>{t.destination}</td>
-                                    <td>{t.Duration}</td>
-                                    <td>{t.GroupSize}</td>
-                                    <td style={{opacity: '.6'}}>$ {t.Price}</td>
-                                    <td>
-                                    <span className='actions'>
-                                        <BsFillTrashFill onClick={() => handleDelete(t._id)} className='delete-btn'/>
-                                        <Link to={`Edit/${t._id}`}><BsFillPencilFill /></Link>
-                                    </span>
-                                </td>
-                                </tr>
-                            })
+                            bookingDisplay
                         }
                     </tbody>
                 </table>
                 
             </div>
+            <ReactPaginate
+                previousLabel={'<<'}
+                nextLabel={'>>'}
+                breakLabel={'...'}
+                pageCount={12}
+                pageRangeDisplayed={2}
+                onPageChange={handlePageChange}
+                containerClassName={"paginationButtons"}
+                previousLinkClassName={'buttonLinks'}
+                nextLinkClassName={'buttonLinks'}
+                activeLinkClassName={'activeLink'}
+                pageLinkClassName={'pageClass'}
+                activeClassName={'activeClass'}
+              />
             </div>
         
         </>

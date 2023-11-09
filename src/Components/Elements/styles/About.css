@@ -56,6 +56,7 @@
     color: #fff;
     border-radius: 4px;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 /* about contents */
@@ -104,7 +105,7 @@
     flex-direction: column;
     /* background-color: rgb(12, 10, 107); */
     width: 40%;
-    margin-right: 12%;
+    margin-right: 10%;
     margin-top: 4rem;
     gap: 5px;
 }
@@ -138,6 +139,7 @@
     font-size: 1.3em;
     color: #fff;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 /* responsive */

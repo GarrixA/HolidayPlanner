@@ -266,9 +266,8 @@
     }
     .contacts-body form {
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
-        width: 80%;
+        width: 70%;
         gap: 16px;
         background-color: #fff;
         height: 40vh;
@@ -277,7 +276,7 @@
         padding: 50px;
         position: relative;
         bottom: -40px;
-        left: 0%;
+        left: 2%;
         border-radius: 8px;
     }
 
@@ -296,6 +295,7 @@
     .fullname .fname{
         left: 25px;
         font-size: 1.6rem;
+        color: #c29d59;
     }
 
     .contacts-questions {
