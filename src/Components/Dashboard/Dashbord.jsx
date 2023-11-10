@@ -79,7 +79,7 @@ function Dashbord() {
                             <h2 className='board-icons' onClick={toggleModal}><FaUsers className='icon1'/> <Link to={'Users'}>Users</Link></h2>    
                         </div> 
                         <div className="logout">
-                            <h2 className='logout'><LuLogOut style={{color: '#c29d59'}} onClick={handleLogOut}/> Log out</h2>
+                            <h2 className='logout' onClick={handleLogOut}><LuLogOut style={{color: '#c29d59'}} /> Log out</h2>
                         </div>
                     </div>
                

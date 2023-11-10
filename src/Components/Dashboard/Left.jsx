@@ -10,6 +10,12 @@ import {LuLogOut} from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
 function Left() {
+
+    const handleLogOut = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        navigate("/login");
+    };
   return (
     <>
         <div className="left-dash">
@@ -26,7 +32,7 @@ function Left() {
                     <h2 className='board-icons'><FaUsers className='icon1'/> <Link to={'Users'}>Users</Link></h2>    
                 </div> 
                 <div className="logout">
-                    <h2 className='logout'><LuLogOut style={{color: '#c29d59'}}/> Log out</h2>
+                    <h2 className='logout' onClick={handleLogOut}><LuLogOut style={{color: '#c29d59'}}/> Log out</h2>
                 </div>
         </div>
     </>

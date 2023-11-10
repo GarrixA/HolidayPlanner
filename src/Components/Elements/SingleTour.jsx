@@ -24,6 +24,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function SingleTour() {
 
+    const [load, setLoad] = useState(false);
+
     const Navigate = useNavigate();
     const [backdropImage, setBackdropImage] = useState();
     const [destinationImage, setDestinationImage] = useState();
@@ -33,7 +35,9 @@ function SingleTour() {
     const [Duration, setDuration] = useState();
     const [GroupSize, setGroupSize] = useState();
     const [Price, setPrice] = useState();
+
     const fetchTour = () => {
+      setLoad(true);
       let token = localStorage.getItem("token");
       axios({
         method: "GET",
@@ -43,7 +47,8 @@ function SingleTour() {
         },
       })
         .then((response) => {
-          setDestinationImage(response?.data?.backdropImage);
+          setTimeout(()=>{
+            setDestinationImage(response?.data?.backdropImage);
           setDestination(response?.data?.destination);
           setTitle(response?.data?.Title);
           setDescription(response?.data?.Description);
@@ -51,6 +56,9 @@ function SingleTour() {
           setGroupSize(response?.data?.GroupSize);
           setPrice(response?.data?.Price);
           console.log(response);
+          setLoad(false)
+          }, 3000)
+          
         })
         .catch((error) => {
           console.log(error);
@@ -105,6 +113,8 @@ function SingleTour() {
       };
 
   return (
+    <div className="show">
+      
     <div className='main'>
           <div className="top-part"
             style={{
@@ -234,6 +244,8 @@ function SingleTour() {
                 </div>
               </div>
             </div>
+    </div>
+    
     </div>
   )
 }

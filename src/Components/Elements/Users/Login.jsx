@@ -31,7 +31,6 @@ function Login() {
             },
         })
         .then((Response) =>{
-            setLoad(true)
             console.log(Response)
             setIsLoading(false)
             localStorage.setItem("user", JSON.stringify(Response.data.user));
@@ -41,14 +40,18 @@ function Login() {
 
             setTimeout(() =>{
                 if(Response.data.user.role == "admin"){
+                    setLoad(false)
                     console.log(token);
                     alert("Welcome back admin :)")
                     Navigate("/Dashboard");
+                    setLoad(false)
+                    
                  } else {
                     toast.success(Response.data.message)
                     alert('Login successfully')
                     toast.success("you can now book a tour :)")
                     Navigate("/")
+                    setLoad(false)
                  }
             }, 3000);
         })
@@ -56,14 +59,16 @@ function Login() {
             console.log(error);
             toast.error('login failed!!!')
             setIsLoading(false);
+            setLoad(false)
         })
     }
   return (
     <div className='signin-container'>
         <ToastContainer/>
         <div className="signin-background">
-            {load ? <PuffLoader color="#36d7b7" size={150} /> : 
+            {load ? <PuffLoader color="#36d7b7" size={210} /> : 
             <div className="signin-wrapper">
+                <div className="dvx">
                 <div className="signin-tittle">
                     <h1>Login</h1>
                     <p></p>
@@ -100,7 +105,7 @@ function Login() {
                     <p>or login with</p>
                     <div className="line"></div>
                 </div>
-
+                </div>
                 <div className="signin-button">
                     <button onClick={handleLogin}>{isLoading? "Loging in..." : "Login"}</button>
                 </div>

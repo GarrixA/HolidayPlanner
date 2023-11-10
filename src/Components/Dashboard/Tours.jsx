@@ -98,10 +98,10 @@ function Tours() {
             <Form/> 
             <div className="table-wrapper">
                 {load ? <PuffLoader
-  color="#36d7b7"
-  size={150}
-  className='barspiner'
-/> :
+                color="#36d7b7"
+                size={150}
+                className='barspiner'
+                /> :
             <div className="dvx">
                 <h1>Tours</h1>
             <div className="table">

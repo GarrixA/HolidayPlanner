@@ -9,9 +9,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PuffLoader }  from 'react-spinners';
 
 
 function TourList() {
+    const [load, setLoad] = useState(false)
 
     // const Navigate = useNavigate();
 
@@ -20,6 +22,7 @@ function TourList() {
     console.log(tours)
     useEffect(()=>{
         const fetctTour = ()=>{
+            setLoad(true)
             axios({
                 method: 'GET',
                 url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/",
@@ -28,20 +31,31 @@ function TourList() {
                 }
             })
             .then((response) =>{
-                console.log(response);
-                setTours(response.data)
+                setTimeout(()=>{
+                    console.log(response);
+                    setTours(response.data)
+                    setLoad(false)
+                })
             })
             .catch((error) =>{
                 console.log(error);
                 toast.error(error.response.data.message);
                 toast.error('Fetch failed')
+                setLoad(false)
               })
         }
         fetctTour();
     }, []);
 
     return (
+        <div className="show">
+            {load ? <PuffLoader
+                color="#36d7b7"
+                size={150}
+                className='barspiner'
+                /> :
         <div className='main-tourlist'>
+
             <div className="tourlist-image">
                 <h1>Tour List</h1>
             </div>
@@ -139,6 +153,8 @@ function TourList() {
                     <button >Find Now</button>
                 </div>
             </div>
+        </div>
+        }
         </div>
     )
 }
